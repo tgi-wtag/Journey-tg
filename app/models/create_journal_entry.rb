@@ -1,0 +1,2 @@
+class CreateJournalEntry < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class CreateGoal < ApplicationRecord
+end
