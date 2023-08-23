@@ -10,8 +10,14 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: journey_dev
+  username: timogiger
+  password: 
+  host: localhost
+  port: 5433 # Default PostgreSQL port
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
