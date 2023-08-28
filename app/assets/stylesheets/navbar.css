@@ -9,7 +9,6 @@
   }
 
   .logo {
-    flex-grow: 1;
     color: #615756;
     text-align: center;
     font-family: 'Cinzel', serif;
@@ -59,5 +58,12 @@
 
     .nav-link {
       margin: 5px 0;
+    }
+  }
+
+  /* Adjust spacing between TASKS and Journey */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .nav-items {
+      justify-content: space-between;
     }
   }
