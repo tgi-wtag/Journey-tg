@@ -14,4 +14,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_091658) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "users", primary_key: "user_id", id: :serial, force: :cascade do |t|
+    t.string "fist_name", limit: 25
+    t.string "last_name", limit: 25
+    t.string "role", default: "user"
+    t.date "date_of_birth"
+    t.date "joining_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
