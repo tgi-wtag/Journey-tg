@@ -57,14 +57,8 @@
   /* Navigation item styling */
   .nav-item {
     flex-shrink: 0;
-    margin: 0 10px;
-    color: #000;
-    text-align: center;
-    font-family: 'Julius Sans One', sans-serif;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    display: flex;
+    align-items: center;
   }
   /* Clear default list styles */
   ul {
@@ -77,4 +71,10 @@
   .nav-link {
     text-decoration: none;
     color: #000;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 10px;
   }
