@@ -56,6 +56,9 @@
   .nav-items {
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+    margin: 0 20px
   }
 
 
