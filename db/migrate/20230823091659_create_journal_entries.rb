@@ -5,7 +5,6 @@ class CreateJournalEntries < ActiveRecord::Migration[7.0]
       t.string :title
       t.date :date
       t.text :content
-
       t.timestamps
     end
   end
