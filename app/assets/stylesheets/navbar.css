@@ -46,8 +46,13 @@
     align-items: center;
   }
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .nav-items {
-      margin: 0 20px; 
+      margin: 0;
+      justify-content: center;
+    }
+
+    .nav-link {
+      margin: 0 5px;
     }
   }
