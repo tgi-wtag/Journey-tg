@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entries View</title>
+<style>
+  /* Your provided styles */
+  .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .content-card {
+    width: calc(20% - 20px); /* 5 cards per row with spacing */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .content-card {
+      width: calc(25% - 20px); /* 4 cards per row with spacing */
+    }
+  }
+
+  @media (max-width: 992px) {
+    .content-card {
+      width: calc(33.33% - 20px); /* 3 cards per row with spacing */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-card {
+      width: calc(50% - 20px); /* 2 cards per row with spacing */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .content-card {
+      width: 100%; /* 1 card per row with spacing */
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="content-container">
+    <div class="content-card">
+      <!-- Card content -->
+    </div>
+    <div class="content-card">
+      <!-- Card content -->
+    </div>
+    <!-- Add more content cards as needed -->
+  </div>
+</body>
+</html>
