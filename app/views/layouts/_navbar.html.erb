@@ -12,16 +12,15 @@
 
 </head>
 <body>
- <header class="navbar">
+  <header class="navbar">
     <nav class="nav-items">
-      <%# <a class="nav-link" href="#">LOG</a> %>
-      <a class="nav-link" href="/log/entries">LOG</a>
-      <a class="nav-link" href="#">TASKS</a>
+      <%= link_to "LOG", '/pages/home' %>
+      <%= link_to "TASKS", tasks_path %>
     </nav>
     <div class="logo">Journey.</div>
     <nav class="nav-items">
-      <a class="nav-link" href="#">GOALS</a>
-      <a class="nav-link" href="#">PROFILE</a>
+      <%= link_to "GOALS", goals_path %>
+      <%= link_to "PROFILE", profile_path %>
     </nav>
   </header>
 </body>
