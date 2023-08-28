@@ -14,13 +14,13 @@
 <body>
   <header class="navbar">
     <nav class="nav-items">
-      <%= link_to "LOG", '/pages/home' %>
-      <%= link_to "TASKS", tasks_path %>
+      <%= link_to "LOG", '/pages/home', class: "nav-link" %>
+      <%= link_to "TASKS", tasks_path, class: "nav-link" %>
     </nav>
     <div class="logo">Journey.</div>
     <nav class="nav-items">
       <%= link_to "GOALS", goals_path, class: "nav-link" %>
-      <%= link_to "PROFILE", profile_path %>
+      <%= link_to "PROFILE", profile_path, class: "nav-link" %>
     </nav>
   </header>
 </body>
