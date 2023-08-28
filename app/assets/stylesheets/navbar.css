@@ -6,9 +6,10 @@
     justify-content: space-between;
     border: 0px solid #000;
     background: #FFFADC;
-  }
+}
 
-  .logo {
+.logo {
+    flex-grow: 1;
     color: #615756;
     text-align: center;
     font-family: 'Cinzel', serif;
@@ -16,16 +17,17 @@
     font-weight: 700;
     line-height: normal;
     text-decoration: none;
-  }
+}
 
-  .nav-items {
+.nav-items {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-grow: 1;
-  }
+    justify-content: space-between;
+    margin: 0 40px
+}
 
-  .nav-link {
+.nav-link {
     text-decoration: none;
     color: #615756;
     font-family: 'Julius Sans One', sans-serif;
@@ -33,37 +35,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-  }
+    margin: 0 10px;
+}
 
-  ul {
+ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center;
-  }
-
-  /* Centering adjustments */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-    }
-
-    .nav-items {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin: 10px 0;
-    }
-
-    .nav-link {
-      margin: 5px 0;
-    }
-  }
-
-  /* Adjust spacing between TASKS and Journey */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .nav-items {
-      justify-content: space-between;
-    }
-  }
+}
