@@ -3,7 +3,6 @@ class PagesController < ApplicationController
     end
     
     def create_entry
-      @entry = JournalEntry.new
-      # You might also want to initialize any associated objects here (e.g., tasks, goals)
+      @entry = journal_entries.new
     end
   end
