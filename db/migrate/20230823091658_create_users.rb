@@ -1,8 +1,7 @@
 class CreateUsers < ActiveRecord::Migration[7.0]
 
   def up
-    create_table :users, id: false do |t|
-      t.integer "user_id", primary_key: true
+    create_table :users do |t|
       t.string "fist_name", :limit => 25
       t.string "last_name", :limit => 25
       t.string "role", :default => 'user'
