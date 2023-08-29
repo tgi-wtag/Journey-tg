@@ -16,7 +16,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_091700) do
 
   create_table "goals", force: :cascade do |t|
     t.text "description"
-    t.integer "user_id"
     t.date "deadline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,7 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_091700) do
 
   create_table "journal_entries", force: :cascade do |t|
     t.string "title"
-    t.integer "user_id"
     t.date "date"
     t.text "content"
     t.datetime "created_at", null: false
@@ -33,7 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_091700) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title"
-    t.integer "user_id"
     t.text "description"
     t.string "status"
     t.string "attached_document"
@@ -41,7 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_23_091700) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", primary_key: "user_id", id: :serial, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "fist_name", limit: 25
     t.string "last_name", limit: 25
     t.string "role", default: "user"
