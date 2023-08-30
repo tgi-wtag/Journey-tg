@@ -1,5 +1,4 @@
 class CreateUsers < ActiveRecord::Migration[7.0]
-
   def up
     create_table :users do |t|
       t.string "fist_name" 
@@ -8,11 +7,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.date "joining_date"
       t.timestamps
     end
-
   end
-
   def down 
     drop_table :users;
   end
-
 end
