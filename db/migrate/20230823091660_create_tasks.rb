@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration[7.0]
       t.string :title
       t.text :description
       t.string :attached_document
+      t.integer :status
       t.timestamps
     end
   end

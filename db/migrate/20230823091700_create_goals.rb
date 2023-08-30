@@ -3,6 +3,7 @@ class CreateGoals < ActiveRecord::Migration[7.0]
     create_table :goals do |t|
       t.text :description
       t.date :deadline
+      t.integer :status
       t.timestamps
     end
   end
