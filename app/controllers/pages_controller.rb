@@ -19,6 +19,10 @@ class PagesController < ApplicationController
 #   end
 # end
 
+def new_entry_form
+  @entry = JournalEntry.new
+end
+
 def create_entry
 end
 end

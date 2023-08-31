@@ -1,6 +1,8 @@
 <h1>Create New Entry</h1>
 
-<%= form_for @entry do |f| %>
+<%= form_for @entry, url: create_entry_path do |f| %>
+
+
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -15,7 +17,9 @@
     <%= f.label :content %>
     <%= f.text_area :content %>
   </div>
+
   <div class="actions">
     <%= f.submit "Create Entry", class: "btn" %>
   </div>
 <% end %>
+
