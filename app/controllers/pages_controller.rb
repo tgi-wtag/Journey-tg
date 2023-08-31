@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   #   else
   #     render :new_entry_form
   #   end
-  # end
+  end
 
   def new_entry_form
     @entry = JournalEntry.new
