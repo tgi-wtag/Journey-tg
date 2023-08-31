@@ -3,6 +3,6 @@ class PagesController < ApplicationController
     end
     
     def create_entry
-      @entry = journal_entries.new
+      @entry = journal_entries.new(:title, :date, :content)
     end
   end
