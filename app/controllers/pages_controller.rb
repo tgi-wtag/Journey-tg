@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
   end
     
-  def new_entry
+  def create_entry
     @entry = JournalEntry.new(entry_params)
 
     # if @entry.save
