@@ -21,3 +21,4 @@ class PagesController < ApplicationController
 
 def create_entry
 end
+end
