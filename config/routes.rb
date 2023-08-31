@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get 'goals', to: 'pages#goals', as: 'goals'
   get 'profile', to: 'pages#profile', as: 'profile'
 
-  get 'create_entry', to: 'pages#new_entry', as: 'new_entry'
+  get 'new_entry_form', to: 'pages#new_entry_form', as: 'new_entry_form'
   post 'create_entry', to: 'pages#create_entry', as: 'create_entry'
 end
