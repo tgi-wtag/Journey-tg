@@ -8,11 +8,11 @@ class PagesController < ApplicationController
     # Handle the entry creation here if needed
 
   #   # Example:
-  #   if @entry.save
-  #     redirect_to some_path
-  #   else
-  #     render :new_entry_form
-  #   end
+    if @entry.save
+      redirect_to entries_path
+    else
+      render :new_entry_form
+    end
   end
 
   def new_entry_form
