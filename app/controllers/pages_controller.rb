@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   def home
   end
     
+  def index 
+    @journal_entry = Journal_entry.all
+  end
   def create_entry
     @entry = JournalEntry.new(entry_params)
 
