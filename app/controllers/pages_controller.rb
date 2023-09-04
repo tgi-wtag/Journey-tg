@@ -5,6 +5,11 @@ class PagesController < ApplicationController
   def index 
     @journal_entry = Journal_entry.all
   end
+
+  def new_entry_form
+    @entry = JournalEntry.new
+  end
+
   def create_entry
     @entry = JournalEntry.new(entry_params)
     if @entry.save
@@ -12,10 +17,6 @@ class PagesController < ApplicationController
     else
       render :new_entry_form
     end
-  end
-
-  def new_entry_form
-    @entry = JournalEntry.new
   end
 
   private
