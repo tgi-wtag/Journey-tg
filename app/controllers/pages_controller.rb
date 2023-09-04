@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
     
   def index 
-    @journal_entry = Journal_entry.all
+    @journal_entries = Journal_entry.all
   end
   def create_entry
     @entry = JournalEntry.new(entry_params)
@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   end
 
   def new_entry_form
-    @entry = JournalEntry.new
+    @journal_entry = JournalEntry.new
   end
 
   private
