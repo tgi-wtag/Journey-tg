@@ -1,2 +1,0 @@
-class JournalEntries < ApplicationRecord
-end
