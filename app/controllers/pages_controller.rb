@@ -11,7 +11,7 @@ class PagesController < ApplicationController
   end
   
   def create_entry
-    @entry = JournalEntry.new(entry_params)
+    @journal_entry = JournalEntry.new(entry_params)
 
     # Handle the entry creation here if needed
 
