@@ -12,15 +12,11 @@ class PagesController < ApplicationController
   
   def create_entry
     @journal_entry = JournalEntry.new(entry_params)
-
-    # Handle the entry creation here if needed
-
-  #   # Example:
-    if @journal_entry.save
-      redirect_to entries_path
-    else
-      render :new_entry_form
-    end
+      if @journal_entry.save
+        redirect_to entries_path
+      else
+        render :new_entry_form
+      end
   end
 
   def new_entry_form
@@ -28,7 +24,6 @@ class PagesController < ApplicationController
   end
 
   private
-
   def entry_params
     params.require(:journal_entry).permit(:title, :date, :content)
   end
