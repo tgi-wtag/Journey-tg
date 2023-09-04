@@ -51,11 +51,12 @@
         Add New Log Entry
     <% end %>
 
-<% journal_entries.each do |entry| %>
+<% @journal_entries.each do |entry| %>
   <div class="content-card">
     <h2><%= entry.title %></h2>
     <p><%= entry.date.strftime("%B %d, %Y") %></p>
   </div>
+<% end %>
 <% end %>
 
 </body>
