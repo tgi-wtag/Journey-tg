@@ -2,6 +2,10 @@ class PagesController < ApplicationController
   def home
   end
     
+  def entries
+    @journal_entries = JournalEntry.all
+  end
+  
   def index 
     @journal_entries = Journal_entry.all
   end
