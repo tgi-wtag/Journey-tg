@@ -5,10 +5,11 @@ class PagesController < ApplicationController
   def entries
     @journal_entries = JournalEntry.all
   end
-  
+
   def index 
-    @journal_entries = Journal_entry.all
+    @journal_entries = JournalEntry.all
   end
+  
   def create_entry
     @entry = JournalEntry.new(entry_params)
 
