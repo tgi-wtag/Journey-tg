@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile', as: 'profile'
   get 'new_entry_form', to: 'pages#new_entry_form', as: 'new_entry_form'
   post 'create_entry', to: 'pages#create_entry', as: 'create_entry'
+  get 'entries/:id', to: 'pages#show_entry', as: 'show_entry'
 end
