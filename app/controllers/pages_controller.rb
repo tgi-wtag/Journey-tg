@@ -27,4 +27,8 @@ class PagesController < ApplicationController
   def entry_params
     params.require(:journal_entry).permit(:title, :date, :content)
   end
+
+  def show_entry
+    @journal_entry = JournalEntry.find(params[:id])
+  end
 end
