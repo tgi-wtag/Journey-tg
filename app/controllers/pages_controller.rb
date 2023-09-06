@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
-  def home
-  end
-    
+
   def index 
     @journal_entry = JournalEntry.all
   end
@@ -28,7 +26,7 @@ class PagesController < ApplicationController
   def tasks;end
 
   private
-  
+
   def entry_params
     params.require(:journal_entry).permit(:title, :date, :content)
   end
