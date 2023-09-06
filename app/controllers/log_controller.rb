@@ -1,4 +1,4 @@
 class LogController < ApplicationController
-    def entries
-    end
+  def entries
+  end
 end
