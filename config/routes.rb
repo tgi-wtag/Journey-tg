@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   resources :pages do
     collection do
-      get 'entries'
-      get 'tasks'
-      get 'goals'
-      get 'profile'
-      get 'new_entry_form', to: 'pages#new_entry_form'
-      post 'create_entry', to: 'pages#create_entry'
+      get :entries
+      get :tasks
+      get :goals
+      get :profile
+      get :new_entry_form, to: 'pages#new_entry_form'
+      post :create_entry, to: 'pages#create_entry'
     end
   end
 end
