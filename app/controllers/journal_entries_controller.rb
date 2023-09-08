@@ -1,4 +1,9 @@
 class JournalEntriesController < ApplicationController
+    
+    def index
+        @journal_entries = JournalEntry.all
+      end
+    
     def entries
       @journal_entries = JournalEntry.all
     end
