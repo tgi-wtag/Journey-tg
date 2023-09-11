@@ -19,6 +19,7 @@ class JournalEntriesController < ApplicationController
     end
 
     private
+    
     def entry_params
       params.require(:journal_entry).permit(:title, :date, :content)
     end
