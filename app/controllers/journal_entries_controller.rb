@@ -12,10 +12,17 @@ class JournalEntriesController < ApplicationController
       @journal_entry = JournalEntry.new(entry_params)
   
       if @journal_entry.save
-        redirect_to journal_entry_path(@journal_entry)
+        if @journal_entry.title.present?
+          redirect_to journal_entry_path(@journal_entry)
+        else
+          flash[:error] = "Title is required."
+        end
       else
+        flash[:error] = "There was an error creating the journal entry."
         render :new
       end
+
+
     end
 
     private
