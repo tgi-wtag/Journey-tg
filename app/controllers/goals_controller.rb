@@ -3,4 +3,3 @@ class GoalsController < ApplicationController
     @goals = Goal.all
   end
 end
-  
