@@ -8,6 +8,7 @@ en:
   new_entry: 'Add New Log Entry'
   create_entry: 'Create New Entry'
   welcome: 'Welcome to journey!'
+  journey: 'Journey.'
 
   errors:
     no_title: 'Title is required.'
