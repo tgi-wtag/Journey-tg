@@ -30,4 +30,25 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: 'Hello world'
+  title: 'Title'
+  log: 'LOG'
+  goals: 'GOALS'
+  tasks: 'TASKS'
+  profile: 'PROFILE'
+  new_entry: 'Add New Log Entry'
+
+  errors:
+    no_title: 'Title is required.'
+    creating_failed: 'There was an error creating the journal entry.'
+
+
+  placeholders:
+    entries: 'Entries View'
+    goals: 'Goals View'
+    tasks: 'Tasks View'
+    profile: 'Profile View'
+  
+
+
+

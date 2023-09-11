@@ -15,10 +15,10 @@ class JournalEntriesController < ApplicationController
         if @journal_entry.title.present?
           redirect_to journal_entry_path(@journal_entry)
         else
-          flash[:error] = "Title is required."
+          flash[:error] = t('errors.no_title')
         end
       else
-        flash[:error] = "There was an error creating the journal entry."
+        flash[:error] = t('errors.creating_failed')
         render :new
       end
 
