@@ -9,11 +9,9 @@ en:
   create_entry: 'Create New Entry'
   welcome: 'Welcome to journey!'
   journey: 'Journey.'
-
   errors:
     no_title: 'Title is required.'
     creating_failed: 'There was an error creating the journal entry.'
-
   placeholders:
     entries: 'Entries View'
     goals: 'Goals View'
