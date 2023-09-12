@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header class="navbar">
+    <nav class="nav-items">
+      <%= link_to t('log'), journal_entries_path, class: "nav-link" %>
+      <%= link_to t('tasks'), tasks_path, class: "nav-link" %>
+    </nav>
+    <%= link_to root_path do %>
+      <div class="logo"><%= t('journey')%></div>
+    <% end %>
+    <nav class="nav-items">
+      <%= link_to t('goals'), goals_path, class: "nav-link" %>
+      <%= link_to t('profile'), users_path, class: "nav-link" %>
+    </nav>
+  </header>
+</body>
+</html>

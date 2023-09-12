@@ -1,0 +1,7 @@
+<h1><%= t('create_entry') %></h1>
+<%= simple_form_for @journal_entry do |f| %>
+  <%= f.input :title %>
+  <%= f.input :date %>
+  <%= f.input :content, as: :text %>
+  <%= f.button :submit %>
+<% end %>
