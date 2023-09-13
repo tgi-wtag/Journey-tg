@@ -11,12 +11,13 @@
     <%= link_to new_journal_entry_path, class: "content-card" do %>
       <%= t('new_entry') %>
     <% end %>
+
+    <% @journal_entries.each do |entry| %>
+      <div class="content-card">
+        <h2><%= entry.title %></h2>
+        <p><%= entry.date.strftime("%B %d, %Y") %></p>
+      </div>
+    <% end %>
   </div>
-  <% @journal_entries.each do |entry| %>
-  <div class="content-card">
-    <h2><%= entry.title %></h2>
-    <p><%= entry.date.strftime("%B %d, %Y") %></p>
-  </div>
-<% end %>
 </body>
 </html>

@@ -3,9 +3,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-  
 .content-card {
-  width: calc(20% - 20px); /* 5 cards per row with spacing */
+  flex: 0 0 calc(20% - 20px); /* 5 cards per row with spacing */
   margin: 10px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -13,28 +12,43 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-  
 @media (max-width: 1200px) {
   .content-card {
-    width: calc(25% - 20px); /* 4 cards per row with spacing */
+    flex: 0 0 calc(25% - 20px); /* 4 cards per row with spacing */
   }
 }
-  
 @media (max-width: 992px) {
   .content-card {
-    width: calc(33.33% - 20px); /* 3 cards per row with spacing */
+    flex: 0 0 calc(33.33% - 20px); /* 3 cards per row with spacing */
   }
 }
-  
 @media (max-width: 768px) {
   .content-card {
-    width: calc(50% - 20px); /* 2 cards per row with spacing */
+    flex: 0 0 calc(50% - 20px); /* 2 cards per row with spacing */
   }
 }
-  
 @media (max-width: 576px) {
   .content-card {
-    width: 100%; /* 1 card per row with spacing */
+    flex: 0 0 calc(100% - 20px); /* 1 card per row with spacing */
   }
 }
-  
+@media (min-width: 1400px) {
+  .content-card {
+    flex: 0 0 calc(14.28% - 20px); /* 7 cards per row with spacing */
+  }
+}
+@media (min-width: 1600px) {
+  .content-card {
+    flex: 0 0 calc(12.5% - 20px); /* 8 cards per row with spacing */
+  }
+}
+@media (min-width: 1800px) {
+  .content-card {
+    flex: 0 0 calc(11.11% - 20px); /* 9 cards per row with spacing */
+  }
+}
+@media (min-width: 2000px) {
+  .content-card {
+    flex: 0 0 calc(10% - 20px); /* 10 cards per row with spacing */
+  }
+}
