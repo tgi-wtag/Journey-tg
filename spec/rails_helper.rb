@@ -56,6 +56,15 @@ RSpec.configure do |config|
   # https://rspec.info/features/6-0/rspec-rails
   config.infer_spec_type_from_file_location!
 
+    # Include FactoryBot syntax methods
+  config.include FactoryBot::Syntax::Methods
+
+  # Load factory definitions before the test suite runs
+  config.before(:suite) do
+    FactoryBot.find_definitions
+  end
+
+
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
