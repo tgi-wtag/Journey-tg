@@ -4,4 +4,4 @@ FactoryBot.define do
     date { Date.today }
     content { 'This is a test entry.' }
   end
-end
+end 
