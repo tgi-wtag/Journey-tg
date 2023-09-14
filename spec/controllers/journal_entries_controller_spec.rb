@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe JournalEntriesController, type: :controller do
+  let!(:journal_entry1) { FactoryBot.create(:journal_entry) }
   describe 'GET #index' do
     it 'returns a successful response' do
       get :index
@@ -8,9 +9,9 @@ RSpec.describe JournalEntriesController, type: :controller do
     end
 
     it 'assigns @journal_entries' do
-      journal_entry = FactoryBot.create(:journal_entry)
+      let!(:journal_entry2) { FactoryBot.create(:journal_entry) }
       get :index
-      expect(assigns(:journal_entries)).to eq([journal_entry])
+      expect(assigns(:journal_entries)).to eq([journal_entry1, journal_entry2])
     end
   end
 end
