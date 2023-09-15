@@ -18,9 +18,9 @@ gem 'turbo-rails'
 
 group :development, :test do
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
-  gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
-  gem 'factory_bot_rails'
-  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 6.0'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'rails-controller-testing', '~> 1.0'
 end
 
 group :development do
