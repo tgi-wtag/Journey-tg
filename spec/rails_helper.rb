@@ -60,9 +60,6 @@ RSpec.configure do |config|
     # Include FactoryBot syntax methods
   config.include FactoryBot::Syntax::Methods
 
-  # Load factory definitions before the test suite runs
-  config.before(:suite) do
-    FactoryBot.find_definitions
   end
 
 
