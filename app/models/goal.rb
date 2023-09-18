@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Goal < ApplicationRecord
   enum status: {
     setted: 0,
