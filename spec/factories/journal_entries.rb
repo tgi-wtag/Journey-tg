@@ -1,7 +1,8 @@
+require 'faker'
 FactoryBot.define do
   factory :journal_entry do
-    title { 'Sample Entry1' }
-    date { Date.today }
-    content { 'This is a test entry.' }
+    title { Faker::Lorem.sentence }
+    date { Faker::Date.backward(days: 365) }
+    content { Faker::Lorem.paragraph }
   end
-end 
+end

@@ -29,6 +29,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'faker', '~> 3.2', '>= 3.2.1'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.3'
   gem 'webdrivers'
