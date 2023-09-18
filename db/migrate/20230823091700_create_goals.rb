@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateGoals < ActiveRecord::Migration[7.0]
   def up
     create_table :goals do |t|
@@ -7,7 +9,8 @@ class CreateGoals < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
-  def down 
-    drop_table :goals;
+
+  def down
+    drop_table :goals
   end
 end
