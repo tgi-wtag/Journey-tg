@@ -59,10 +59,6 @@ RSpec.configure do |config|
 
     # Include FactoryBot syntax methods
   config.include FactoryBot::Syntax::Methods
-
-  end
-
-
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
