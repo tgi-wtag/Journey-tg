@@ -4,5 +4,5 @@ class Task < ApplicationRecord
     in_progress: 1,
     finished: 2
   }
-  validates_presence_of :title
+  validates :title, presence: true
 end

@@ -1,4 +1,4 @@
 class JournalEntry < ApplicationRecord
-  validates_presence_of :title
-  validates_presence_of :content
+  validates :title, presence: true
+  validates :content, presence: true
 end

@@ -4,5 +4,5 @@ class Goal < ApplicationRecord
     working_on: 1,
     archived: 2
   }
-  validates_presence_of :description
+  validates :description, presence: true
 end
