@@ -5,4 +5,5 @@ RSpec.describe Goal, type: :model do
     goal = Goal.new(description: 'This is an example goal')
     expect(goal).to be_valid
   end
+  it { should validate_presence_of(:description) }
 end
