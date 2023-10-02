@@ -1,4 +1,4 @@
-<h1>Login page</h1>
+<h1><%= t('login_user') %></h1>
 <%= form_with model: @user, url: user_sessions_path do |f| %>
   <div>
     <%= f.label :email %><br>
@@ -9,6 +9,6 @@
     <%= f.password_field :password %>
   </div>
   <p>
-    <%= f.submit 'Login' %>
+    <%= f.submit t('login_user') %>
   </p>
 <% end %>
