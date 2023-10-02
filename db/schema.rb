@@ -49,8 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_21_055904) do
     t.integer "role", default: 0
     t.string "designation"
     t.string "email"
-    t.string "passwort_digest"
-    t.string "passwort_confirmation"
+    t.string "password_digest"
+    t.string "password_confirmation"
   end
 
 end
