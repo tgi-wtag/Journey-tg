@@ -2,8 +2,11 @@
 <%= simple_form_for @user do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
+  <%= f.input :email %>
+  <%= f.input :designation %>
   <%= f.input :date_of_birth, as: :date %>
   <%= f.input :joining_date, as: :date %>
+  <%= f.input :passwort_digest %>
   <%= f.button :submit %>
 <% end %>
  
