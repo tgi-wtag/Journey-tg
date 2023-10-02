@@ -6,7 +6,8 @@
   <%= f.input :designation %>
   <%= f.input :date_of_birth, as: :date %>
   <%= f.input :joining_date, as: :date %>
-  <%= f.input :passwort_digest %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
   <%= f.button :submit %>
 <% end %>
  
