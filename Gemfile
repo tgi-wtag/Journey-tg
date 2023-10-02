@@ -1,11 +1,10 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 git_source(:github) { |_repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
 gem 'bootsnap', require: false
+gem 'bcrypt', '~> 3.1.7'
 gem 'cancancan'
 gem 'importmap-rails'
 gem 'jbuilder'
