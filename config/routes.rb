@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   resources :goals
   resources :users
   resources :user_sessions
+
+  resources :users do
+    post 'logout', on: :collection
+  end
 end
