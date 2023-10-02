@@ -8,6 +8,7 @@ en:
   new_entry: 'Add New Log Entry'
   create_entry: 'Create New Entry'
   create_user: 'Register New User'
+  login_user: 'Login'
   welcome: 'Welcome to journey!'
   journey: 'Journey.'
   errors:

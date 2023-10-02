@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :tasks
   resources :goals
   resources :users
+  resources :user_sessions
 end
