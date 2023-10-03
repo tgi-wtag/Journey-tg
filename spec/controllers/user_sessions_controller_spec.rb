@@ -7,7 +7,6 @@ RSpec.describe UserSessionsController, type: :controller do
       expect(response).to render_template("new")
     end
   end
-
   describe "POST #create" do
     let(:valid_attributes) { { email: "user@example.com", password: "password" } }
     let(:invalid_attributes) { { email: "invalid@example.com", password: "invalid" } }
@@ -19,7 +18,6 @@ RSpec.describe UserSessionsController, type: :controller do
         expect(session[:user_id]).to eq(user.id)
       end
     end
-
     context "with invalid credentials" do
       it "sets flash alert and redirects to new user session path" do
         post :create, params: { user: invalid_attributes }
