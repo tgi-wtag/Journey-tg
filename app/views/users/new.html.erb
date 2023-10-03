@@ -1,13 +1,13 @@
 <h1><%= t('create_user') %></h1>
 <%= simple_form_for @user do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :email %>
   <%= f.input :designation %>
-  <%= f.input :date_of_birth, as: :date %>
-  <%= f.input :joining_date, as: :date %>
+  <%= f.label :date_of_birth %>
+  <%= f.date_field :date_of_birth %><br>
+  <%= f.label :joining_date%>
+  <%= f.date_field :joining_date %><br>
   <%= f.label :password %>
   <%= f.password_field :password %><br>
   <%= f.label :password_confirmation %>
