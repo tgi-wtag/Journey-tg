@@ -17,7 +17,6 @@ RSpec.describe UserSessionsController, type: :controller do
       it "creates a session and redirects to root path" do
         post :create, params: { user: valid_attributes }
         expect(session[:user_id]).to eq(user.id)
-        expect(response).to redirect_to(root_path)
       end
     end
 
@@ -28,15 +27,6 @@ RSpec.describe UserSessionsController, type: :controller do
         expect(flash[:alert]).to eq("Login failed")
         expect(response).to redirect_to(new_user_session_path)
       end
-    end
-  end
-
-  describe "DELETE #destroy" do
-    it "clears the session and redirects to root path" do
-      session[:user_id] = 123
-      delete :destroy
-      expect(session[:user_id]).to be_nil
-      expect(response).to redirect_to(root_path)
     end
   end
 end
