@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe UsersController, type: :controller do
   include FactoryBot::Syntax::Methods
   describe "GET #new" do
