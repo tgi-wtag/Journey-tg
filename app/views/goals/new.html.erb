@@ -1,6 +1,0 @@
-<h1><%= t('goal.create') %></h1>
-<%= simple_form_for @goal, url: goals_path do |f| %>
-  <%= f.input :description %>
-  <%= f.date_field :deadline %>
-  <%= f.button :submit, t('goal.create') %>
-<% end %>

@@ -2,6 +2,7 @@
 en:
   alerts:
     login:
+<<<<<<< HEAD
       failed: Login Failed
       succesfull: Login Succesfull
   create_entry: Create New Entry
@@ -27,3 +28,8 @@ en:
   tasks: TASKS
   title: Title
   welcome: Welcome to journey!
+=======
+      succesfull: 'Login Succesfull'
+      failed: 'Login Failed'
+      
+>>>>>>> parent of e857b13 (create new usw)
