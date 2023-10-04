@@ -9,9 +9,9 @@ class UserSessionsController < ApplicationController
     if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to root_path
-      flash[:alert] = "Login fiugailed"
+      flash[:alert] = t('alerts.login.succesfull')
     else
-      flash[:alert] = "Login failed"
+      flash[:alert] = t('alerts.login.failed')
       redirect_to new_user_session_path
     end
   end
