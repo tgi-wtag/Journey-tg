@@ -23,4 +23,7 @@ en:
     login:
       succesfull: 'Login Succesfull'
       failed: 'Login Failed'
-      
+  goal:
+    new: 'Add New Goal'
+    create: 'Create New Goal'
+    
