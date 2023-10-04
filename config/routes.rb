@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :journal_entries
   resources :tasks
-  resources :goals
-  resources :users
   resources :user_sessions
+  resources :goals
 
   resources :users do
     post 'logout', on: :collection
+    resources :goals
   end
 end
