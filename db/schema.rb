@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_114712) do
     t.date "joining_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "role", default: 0
+    t.integer "role", default: 0, null: false
     t.string "designation"
     t.string "email"
     t.string "password_digest"
