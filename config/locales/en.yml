@@ -19,3 +19,7 @@ en:
     goals: 'Goals View'
     tasks: 'Tasks View'
     profile: 'Profile View'
+  alerts:
+    login:
+      succesfull: 'Login Succesfull'
+      failed: 'Login Failed'
