@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   resources :users do
     post 'logout', on: :collection
+    resources :goals
   end
 end
