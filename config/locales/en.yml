@@ -8,6 +8,7 @@ en:
   errors:
     creating_failed: There was an error creating the journal entry.
     no_title: Title is required.
+    e401: 401 Unauthorized
   goal:
     create: Create New Goal
     new: Add New Goal
