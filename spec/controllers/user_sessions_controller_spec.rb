@@ -10,7 +10,7 @@ RSpec.describe UserSessionsController, type: :controller do
     end
 
     it 'sets flash alert and redirects to new user session path with invalid credentials' do
-      post :create, params: { user: { email: 'invalid_email', password: 'invalid_password' } }
+      post :create, params: { user: { email: 'invalid@gmail.com', password: 'invalid_password' } }
       expect(session[:user_id]).to be_nil
       expect(flash[:alert]).to eq('Login Failed')
       expect(response).to redirect_to(new_user_session_path)
@@ -18,7 +18,7 @@ RSpec.describe UserSessionsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    it 'logs out the user and redirects to root' do
+    it 'logs out the user' do
       user = create(:user)
       session[:user_id] = user.id
       delete :destroy
