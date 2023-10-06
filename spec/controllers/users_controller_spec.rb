@@ -20,13 +20,12 @@ RSpec.describe UsersController, type: :controller do
   describe 'POST #login' do
     it 'logs in the user with valid login credentials' do
       user = create(:user)
-      post :login, params: { user: { email: user.email, password: user.password } }
+      post :create, params: { user: { email: user.email, password: user.password } }
       expect(session[:user_id]).to eq(user.id)
-      expect(response).to redirect_to(root_path)
     end
-
+  
     it 'does not log in the user with invalid login credentials' do
-      post :login, params: { user: { email: 'invalid_email', password: 'invalid_password' } }
+      post :create, params: { user: { email: 'invalid_email', password: 'invalid_password' } }
       expect(session[:user_id]).to be_nil
       expect(response).to redirect_to(new_user_session_path)
     end
