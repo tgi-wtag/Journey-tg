@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :user do
-    first_name { 'John' }
-    last_name { 'Doe' }
-    date_of_birth { Date.new(1990, 1, 1) }
-    joining_date { Date.new(2023, 9, 1) }
-    designation { 'Developer' }
-    email { 'john@example.com' }
-    password { 'password' }
-    password_confirmation { 'password' }
+    first_name { FFaker::Name.first_name }
+    last_name { FFaker::Name.last_name }
+    date_of_birth { FFaker::Time.between(50.years.ago, 18.years.ago) }
+    joining_date { FFaker::Time.between(1.year.ago, Date.today) }
+    designation { FFaker::Job.title }
+    email { FFaker::Internet.email }
+    password { FFaker::Internet.password(min_length: 8) }
+    password_confirmation { password }
   end
 end

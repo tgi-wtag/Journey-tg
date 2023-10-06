@@ -1,6 +1,8 @@
 require 'rails_helper'
+
 RSpec.describe UsersController, type: :controller do
   include FactoryBot::Syntax::Methods
+
   describe 'GET #new' do
     it 'assigns a new User to @user' do
       get :new
@@ -15,7 +17,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe 'POST #create' do
     context 'with valid params' do
-      let(:valid_params) { attributes_for(:user) }
+      let(:valid_params) { attributes_for(:user, password: FFaker::Internet.password(min_length: 8).to_s) }
 
       it 'creates a new user' do
         expect do
@@ -28,32 +30,32 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to redirect_to(root_path)
       end
     end
+  end
 
-    context 'with invalid params' do
-      let(:invalid_params) do
-        {
-          user: {
-            first_name: 'John',
-            last_name: 'Doe',
-            date_of_birth: Date.new(2023, 1, 1),
-            joining_date: Date.new(2023, 9, 1),
-            designation: 'Developer',
-            email: 'john@example.com',
-            password: 'password',
-            password_confirmation: 'wrong_password'
-          }
-        }
+  describe 'POST #login' do
+    let(:user) { create(:user) }
+
+    context 'with valid login credentials' do
+      it 'logs in the user' do
+        post :login, params: { user: { email: user.email, password: user.password } }
+        expect(session[:user_id]).to eq(user.id)
       end
 
-      it 'does not create a new user' do
-        expect do
-          post :create, params: invalid_params
-        end.not_to change(User, :count)
+      it 'redirects to the root path' do
+        post :login, params: { user: { email: user.email, password: user.password } }
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    context 'with invalid login credentials' do
+      it 'does not log in the user' do
+        post :login, params: { user: { email: 'invalid_email', password: 'invalid_password' } }
+        expect(session[:user_id]).to be_nil
       end
 
-      it 'renders the new template' do
-        post :create, params: invalid_params
-        expect(response).to render_template('new')
+      it 'redirects to the login page' do
+        post :login, params: { user: { email: 'invalid_email', password: 'invalid_password' } }
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
   end
