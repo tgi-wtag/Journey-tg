@@ -14,4 +14,46 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_114712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "goals", force: :cascade do |t|
+    t.text "description"
+    t.date "deadline"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "journal_entries", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_journal_entries_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "attached_document"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.date "date_of_birth", null: false
+    t.date "joining_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "role", default: 0, null: false
+    t.string "designation"
+    t.string "email", null: false
+    t.string "password_digest", null: false
+    t.string "password_confirmation", null: false
+  end
+
+  add_foreign_key "journal_entries", "users"
 end
