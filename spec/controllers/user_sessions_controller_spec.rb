@@ -4,7 +4,7 @@ RSpec.describe UserSessionsController, type: :controller do
   describe 'POST #create' do
     it 'logs in the user and redirects to root with valid credentials' do
       user = create(:user, password: 'valid_password')
-      post :create, params: { user: { email: user.email, password: 'valid_password' } }
+      post :create, params: { user: { email: user.email, password: user.password } }
       expect(session[:user_id]).to eq(user.id)
       expect(response).to redirect_to(root_path)
     end
