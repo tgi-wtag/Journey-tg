@@ -8,7 +8,7 @@ FactoryBot.define do
     joining_date { FFaker::Time.between(5.years.ago, Date.today) }
     designation { FFaker::Job.title }
     email { FFaker::Internet.email }
-    password { 'valid_password' }
-    password_confirmation { 'valid_password' }
+    password { FFaker::Internet.password }
+    password_confirmation { password }
   end
 end
