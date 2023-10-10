@@ -1,5 +1,5 @@
 require 'ffaker'
-
+password = FFaker::Internet.password(12)
 FactoryBot.define do
   factory :user do
     first_name { FFaker::Name.first_name }
@@ -8,7 +8,7 @@ FactoryBot.define do
     joining_date { FFaker::Time.between(5.years.ago, Date.today) }
     designation { FFaker::Job.title }
     email { FFaker::Internet.email }
-    password { FFaker::Internet.password }
+    password { password }
     password_confirmation { password }
   end
 end
