@@ -2,7 +2,7 @@ en:
   alerts:
     login:
       failed: Login Failed
-      succesfull: Login Succesfull
+      successful: Login Successful
   create_entry: Create New Entry
   create_user: Register New User
   errors:
@@ -17,6 +17,7 @@ en:
   journey: Journey.
   log: LOG
   login_user: Login
+  logout_user: Logout
   new_entry: Add New Log Entry
   placeholders:
     entries: Entries View
