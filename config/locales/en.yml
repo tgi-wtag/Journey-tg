@@ -1,15 +1,16 @@
+---
 en:
   alerts:
     login:
+      destroyed: You have been logged out
       failed: Login Failed
       successful: Login Successful
-      destroyed: You have been logged out
   create_entry: Create New Entry
   create_user: Register New User
   errors:
     creating_failed: There was an error creating the journal entry.
-    no_title: Title is required.
     e401: 401 Unauthorized
+    no_title: Title is required.
   goal:
     create: Create New Goal
     new: Add New Goal
@@ -29,4 +30,3 @@ en:
   tasks: TASKS
   title: Title
   welcome: Welcome to journey!
-  
