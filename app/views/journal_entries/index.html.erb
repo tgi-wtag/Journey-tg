@@ -12,7 +12,7 @@
       <%= t('new_entry') %>
     <% end %>
 
-    <% @journal_entries.each do |entry| %>
+    <% current_user.journal_entries.each do |entry| %>
       <div class="content-card">
         <h2><%= entry.title %></h2>
         <p><%= entry.date.strftime("%B %d, %Y") %></p>

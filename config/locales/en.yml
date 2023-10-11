@@ -1,19 +1,32 @@
+---
 en:
-  hello: 'Hello world'
-  title: 'Title'
-  log: 'LOG'
-  goals: 'GOALS'
-  tasks: 'TASKS'
-  profile: 'PROFILE'
-  new_entry: 'Add New Log Entry'
-  create_entry: 'Create New Entry'
-  welcome: 'Welcome to journey!'
-  journey: 'Journey.'
+  alerts:
+    login:
+      destroyed: You have been logged out
+      failed: Login Failed
+      successful: Login Successful
+  create_entry: Create New Entry
+  create_user: Register New User
   errors:
-    no_title: 'Title is required.'
-    creating_failed: 'There was an error creating the journal entry.'
+    creating_failed: There was an error creating the journal entry.
+    e401: 401 Unauthorized
+    no_title: Title is required.
+  goal:
+    create: Create New Goal
+    new: Add New Goal
+  goals: GOALS
+  hello: Hello world
+  journey: Journey.
+  log: LOG
+  login_user: Login
+  logout_user: Logout
+  new_entry: Add New Log Entry
   placeholders:
-    entries: 'Entries View'
-    goals: 'Goals View'
-    tasks: 'Tasks View'
-    profile: 'Profile View'
+    entries: Entries View
+    goals: Goals View
+    profile: Profile View
+    tasks: Tasks View
+  profile: PROFILE
+  tasks: TASKS
+  title: Title
+  welcome: Welcome to journey!

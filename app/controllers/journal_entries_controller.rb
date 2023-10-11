@@ -9,6 +9,7 @@ class JournalEntriesController < ApplicationController
 
   def create
     @journal_entry = JournalEntry.new(entry_params)
+    @journal_entry.user_id = current_user.id
 
     if @journal_entry.save
       if @journal_entry.title.present?

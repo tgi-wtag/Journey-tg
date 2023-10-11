@@ -1,1 +1,12 @@
-<h1> <%=t('welcome')%></h1>
+<% if current_user %>
+  <h1><%=t('welcome')%> <%= current_user.first_name %></h1>
+<% else %>
+  <div class="content-container">
+  <%= link_to new_user_path, class: "content-card" do %>
+  <%= t('create_user') %>
+  <% end %>
+  <div class="content-container">
+  <%= link_to new_user_session_path, class: "content-card" do %>
+  <%= t('login_user') %>
+  <% end %>
+<% end %>
