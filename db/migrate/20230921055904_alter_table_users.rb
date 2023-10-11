@@ -4,7 +4,7 @@ class AlterTableUsers < ActiveRecord::Migration[7.0]
     add_column :users, :designation, :string
     add_column :users, :email, :string, null: false
     add_column :users, :password_digest, :string, null: false
-    add_column :users, :password_confirmation, :string, null: false
+    add_column :users, :password_confirmation, :string
     rename_column :users, :fist_name, :first_name
     change_column :users, :date_of_birth, :date, null: false
   end

@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe UserSessionsController, type: :controller do
+  let!(:user) do
+    FactoryBot.create(:user)
+  end
   describe 'POST #create' do
     it 'logs in the user and redirects to root with valid credentials' do
-      user = create(:user, password: 'password')
-      post :create, params: { user: { email: user.email, password: user.password } }
+      post :create, params: { user: { email: user.email, password: user.password, password_confirmation: user.password_confirmation} }
       expect(session[:user_id]).to eq(user.id)
       expect(response).to redirect_to(root_path)
     end
@@ -19,7 +21,6 @@ RSpec.describe UserSessionsController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'logs out the user' do
-      user = create(:user)
       session[:user_id] = user.id
       delete :destroy
       expect(session[:user_id]).to be_nil

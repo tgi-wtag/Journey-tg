@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_114712) do
     t.string "designation"
     t.string "email", null: false
     t.string "password_digest", null: false
-    t.string "password_confirmation", null: false
+    t.string "password_confirmation"
   end
 
   add_foreign_key "journal_entries", "users"
