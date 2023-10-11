@@ -1,4 +1,3 @@
-require 'ffaker'
 password = FFaker::Internet.password(12)
 FactoryBot.define do
   factory :user do
