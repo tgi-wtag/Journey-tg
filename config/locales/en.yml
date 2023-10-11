@@ -3,6 +3,7 @@ en:
     login:
       failed: Login Failed
       successful: Login Successful
+      destroyed: You have been logged out
   create_entry: Create New Entry
   create_user: Register New User
   errors:

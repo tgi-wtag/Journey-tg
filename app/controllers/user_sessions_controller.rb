@@ -18,6 +18,7 @@ class UserSessionsController < ApplicationController
   
   def destroy
     session[:user_id] = nil
+    flash[:notice] = t('alerts.login.destroyed')
     redirect_to root_path
   end
 end
