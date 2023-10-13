@@ -12,7 +12,7 @@
       <%= t('new_goal') %>
     <% end %>
 
-    <% current_user.goals.each do |goals| %>
+    <% current_user.goals.each do |goal| %>
       <div class="content-card">
         <h2><%= goal.description %></h2>
         <p><%= goal.status %></p>
