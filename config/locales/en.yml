@@ -7,9 +7,10 @@ en:
   create_entry: Create New Entry
   create_user: Register New User
   errors:
-    creating_failed: There was an error creating the journal entry.
+    creating_failed: There was an error while creating.
     e401: 401 Unauthorized
     no_title: Title is required.
+    no_description: Describtion is required
   goal:
     create: Create New Goal
     new: Add New Goal
