@@ -3,7 +3,7 @@ class GoalsController < ApplicationController
     @goals = Goal.all
   end
 
-  def new
+  def new1:30
     @goal = Goal.new
   end
   def create
