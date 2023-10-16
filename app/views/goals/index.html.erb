@@ -11,15 +11,15 @@
     <%= link_to new_goal_path, class: "content-card" do %>
       <%= t('new_goal') %>
     <% end %>
-
-    <% current_user.goals.each do |goal| %>
-      <div class="content-card">
-        <%= link_to goal_path(goal), class: "goal-link" do %>
-          <h2><%= goal.description %></h2>
-          <p><%= goal.status %></p>
-        <% end %>
-      </div>
+<% current_user.goals.each do |goal| %>
+  <div class="content-card">
+    <%= link_to goal_path(goal), class: "goal-link" do %>
+      <h2><%= goal.description %></h2>
+      <p><%= goal.status %></p>
     <% end %>
+  </div>
+<% end %>
+
   </div>
 </body>
 </html>

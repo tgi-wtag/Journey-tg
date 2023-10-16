@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+  <div class="goal-details">
+    <h1>Goal Details</h1>
+    
+    <h2>Description:</h2>
+    <p><%= @goal.description %></p>
+
+    <h2>Deadline:</h2>
+    <p><%= @goal.deadline %></p>
+
+    <h2>Status:</h2>
+    <p><%= @goal.status %></p>
+
+    <p><%= link_to 'Back to Goals', goals_path %></p>
+  </div>
+</body>
+</html>
