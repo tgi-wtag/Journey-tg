@@ -13,7 +13,7 @@
 
 <div class="field">
   <%= f.label :status %>
-  <%= f.select :status, options_for_select([[t('goal.in_progress'), 'in_progress'], [t('goal.completed'), 'completed'], [t('goal.not_started'), 'not_started']]) %>
+  <%= f.select :status, options_for_select([['Setted', 'setted'], ['Working On', 'working_on'], ['Archived', 'archived']]) %>
 </div>
 
 <div class="actions">
