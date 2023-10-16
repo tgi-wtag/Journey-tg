@@ -1,37 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Goal</title>
-</head>
-<body>
-  <div class="goal-edit">
-    <h1>Edit Goal</h1>
-    
-    <%= form_for @goal do |f| %>
-      <div class="field">
-        <%= f.label :description %>
-        <%= f.text_area :description, rows: 5 %>
-      </div>
+<h1><%= t('goal.edit') %></h1>
 
-      <div class="field">
-        <%= f.label :deadline %>
-        <%= f.date_field :deadline %>
-      </div>
+ <%= form_for @goal do |f| %>
+<div class="field">
+  <%= f.label :description %>
+  <%= f.text_area :description, rows: 5 %>
+</div>
 
-      <div class="field">
-        <%= f.label :status %>
-        <%= f.select :status, options_for_select([['In Progress', 'in_progress'], ['Completed', 'completed'], ['Not Started', 'not_started']])
-        %>
-      </div>
+<div class="field">
+  <%= f.label :deadline %>
+  <%= f.date_field :deadline %>
+</div>
 
-      <div class="actions">
-        <%= f.submit 'Update Goal' %>
-      </div>
-    <% end %>
+<div class="field">
+  <%= f.label :status %>
+  <%= f.select :status, options_for_select([[t('goal.in_progress'), 'in_progress'], [t('goal.completed'), 'completed'], [t('goal.not_started'), 'not_started']]) %>
+</div>
 
-    <p><%= link_to 'Back to Goal Details', goal_path(@goal) %></p>
-  </div>
-</body>
-</html>
+<div class="actions">
+  <%= f.submit t('goal.update_goal') %>
+</div>
+<% end %>
+
+
+<p><%= link_to t('goal.back_to_goal_details'), goal_path(@goal) %></p>

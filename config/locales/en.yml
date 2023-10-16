@@ -14,6 +14,15 @@ en:
   goal:
     create: Create New Goal
     new: Add New Goal
+    edit: Edit Goal
+    description: Description
+    deadline: Deadline
+    status: Status
+    in_progress: In Progress
+    completed: Completed
+    not_started: Not Started
+    update_goal: Update Goal
+    back_to_goal_details: Back to Goal Details
   goals: GOALS
   hello: Hello world
   journey: Journey.
