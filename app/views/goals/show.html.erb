@@ -13,10 +13,10 @@
     <p><%= @goal.description %></p>
 
     <h2><%= t('goal.deadline') %>:</h2>
-    <p><%= l(@goal.deadline) %></p>
+    <p><%= @goal.deadline %></p>
 
     <h2><%= t('goal.status') %>:</h2>
-    <p><%= t("goal.#{@goal.status}") %></p>
+    <p><%= @goal.status %></p>
 
     <%= link_to t('goal.edit'), edit_goal_path(@goal), class: 'edit-button' %>
     

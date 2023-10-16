@@ -26,7 +26,7 @@ class GoalsController < ApplicationController
 
   def show
     @goal = Goal.find(params[:id])
-    @goal.deadline ||= Date.tomorrow
+    @goal.deadline
   end
 
   def edit
@@ -46,6 +46,6 @@ class GoalsController < ApplicationController
   private
 
   def goal_params
-    params.require(:goal).permit(:description, :status)
+    params.require(:goal).permit(:description, :deadline, :status)
   end
 end
