@@ -3,13 +3,14 @@ class GoalsController < ApplicationController
     @goals = Goal.all
   end
 
-  def new1:30
+  def new
     @goal = Goal.new
   end
+
   def create
     @goal = Goal.new(goal_params)
     @goal.user_id = current_user.id
-  
+
     if @goal.save
       if @goal.description.present?
         redirect_to goal_path(@goal)
@@ -31,9 +32,9 @@ class GoalsController < ApplicationController
   def edit
     @goal = Goal.find(params[:id])
   end
-  
+
   private
-  
+
   def goal_params
     params.require(:goal).permit(:description, :status)
   end
