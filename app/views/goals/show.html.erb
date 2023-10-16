@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Goal Details</title>
+  <title><%= t('goal.edit') %></title>
 </head>
 <body>
   <div class="goal-details">
-    <h1>Goal Details</h1>
+    <h1><%= t('goal.edit') %></h1>
     
-    <h2>Description:</h2>
+    <h2><%= t('goal.description') %>:</h2>
     <p><%= @goal.description %></p>
 
-    <h2>Deadline:</h2>
-    <p><%= @goal.deadline %></p>
+    <h2><%= t('goal.deadline') %>:</h2>
+    <p><%= l(@goal.deadline) %></p>
 
-    <h2>Status:</h2>
-    <p><%= @goal.status %></p>
+    <h2><%= t('goal.status') %>:</h2>
+    <p><%= t("goal.#{@goal.status}") %></p>
 
-    <%= link_to 'Edit Goal', edit_goal_path(@goal), class: 'edit-button' %>
+    <%= link_to t('goal.edit'), edit_goal_path(@goal), class: 'edit-button' %>
     
-    <p><%= link_to 'Back to Goals', goals_path %></p>
+    <p><%= link_to t('goal.back_to_goal_details'), goals_path %></p>
   </div>
 </body>
 </html>
