@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> <%=t('placeholders.goals')%> </title>
+  <title><%= t('placeholders.goals') %></title>
   <%= stylesheet_link_tag 'entries' %>
 </head>
 <body>
@@ -14,8 +14,10 @@
 
     <% current_user.goals.each do |goal| %>
       <div class="content-card">
-        <h2><%= goal.description %></h2>
-        <p><%= goal.status %></p>
+        <%= link_to goal_path(goal), class: "goal-link" do %>
+          <h2><%= goal.description %></h2>
+          <p><%= goal.status %></p>
+        <% end %>
       </div>
     <% end %>
   </div>
