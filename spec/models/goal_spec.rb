@@ -10,4 +10,8 @@ RSpec.describe Goal, type: :model do
     goal = build(:goal, description: nil)
     expect(goal).to_not be_valid
   end
+
+  describe 'associations' do
+    it { should belong_to(:user) }
+  end
 end

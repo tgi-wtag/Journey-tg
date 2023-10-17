@@ -27,10 +27,8 @@ class GoalsController < ApplicationController
   end
 
   def show; end
-  end
 
-  def edit: end
-  end
+  def edit; end
 
   def update
     if @goal.update(goal_params)
