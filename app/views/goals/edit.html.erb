@@ -3,7 +3,7 @@
 
   <%= f.input :description, as: :text, input_html: { rows: 5 } %>
   <%= f.input :deadline, as: :date %>
-  <%= f.select :status, Goal.statuses.keys.to_a.map { |status| [t('goal.statuses.#{status}'), status] } %><br>
+  <%= f.select :status, Goal.statuses.keys.to_a.map { |status| [t("goal.statuses.#{status}"), status] } %><br>
 
   <div class='actions'>
     <%= f.submit t('goal.update_goal') %>

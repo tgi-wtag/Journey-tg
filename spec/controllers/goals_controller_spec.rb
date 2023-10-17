@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe GoalsController, type: :controller do
-  let(:user) { create(:user) }
+  let!(:user) { create(:user) }
+  let(:goal) { create(:goal, user: user) }
 
   before do
-    user = create(:user)
     sign_in_user(user)
   end
 
@@ -37,8 +37,6 @@ RSpec.describe GoalsController, type: :controller do
   end
 
   describe 'GET #show' do
-    let(:goal) { create(:goal, user: user) }
-
     it 'returns a successful response' do
       get :show, params: { id: goal.id }
       expect(response).to have_http_status(:ok)
@@ -46,8 +44,6 @@ RSpec.describe GoalsController, type: :controller do
   end
 
   describe 'GET #edit' do
-    let(:goal) { create(:goal, user: user) }
-
     it 'returns a successful response' do
       get :edit, params: { id: goal.id }
       expect(response).to have_http_status(:ok)

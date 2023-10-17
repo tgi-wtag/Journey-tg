@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+  before_action :set_goal, only: %i[show edit update]
+
   def goals
     @goals = Goal.all
   end
@@ -25,17 +27,12 @@ class GoalsController < ApplicationController
   end
 
   def show
-    @goal = Goal.find(params[:id])
-    @goal.deadline
   end
 
   def edit
-    @goal = Goal.find(params[:id])
   end
 
   def update
-    @goal = Goal.find(params[:id])
-
     if @goal.update(goal_params)
       redirect_to goal_path(@goal)
     else
@@ -47,5 +44,9 @@ class GoalsController < ApplicationController
 
   def goal_params
     params.require(:goal).permit(:description, :deadline, :status)
+  end
+
+  def set_goal
+    @goal = Goal.find(params[:id])
   end
 end
