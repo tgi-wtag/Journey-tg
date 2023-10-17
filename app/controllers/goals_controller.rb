@@ -26,7 +26,7 @@ class GoalsController < ApplicationController
     end
   end
 
-  def show
+  def show; end
   end
 
   def edit
