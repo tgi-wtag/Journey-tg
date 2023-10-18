@@ -1,0 +1,12 @@
+<%= simple_form_for @goal do |f| %>
+  <h1><%= t('goal.edit') %></h1>
+
+  <%= f.input :description, as: :text, input_html: { rows: 5 } %>
+  <%= f.input :deadline, as: :date %>
+  <%= f.select :status, Goal.statuses.keys.to_a.map { |status| [t("goal.statuses.#{status}"), status] } %><br>
+
+  <div class='actions'>
+    <%= f.submit t('goal.update_goal') %>
+  </div>
+<% end %>
+<p><%= link_to t('goal.back_to_goal_details'), goal_path(@goal) %></p>

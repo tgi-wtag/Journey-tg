@@ -12,6 +12,7 @@ gem 'pg', '~> 1.2'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.7'
 gem 'rubocop', require: false
+gem 'rufo'
 gem 'simple_form'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
