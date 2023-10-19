@@ -39,3 +39,10 @@ en:
   tasks: TASKS
   title: Title
   welcome: Welcome to journey!
+
+  journal_entry:
+    index: "Journal Entries"
+    new: "New Journal Entry"
+    title: "Title"
+    date: "Date"
+    content: "Content"
