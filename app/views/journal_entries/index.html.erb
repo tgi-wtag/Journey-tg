@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> t('placeholders.entries') </title>
+  <title><%= t('placeholders.entries') %></title>
   <%= stylesheet_link_tag 'entries' %>
 </head>
 <body>
   <div class="content-container">
-    <%= link_to new_journal_entry_path, class: "content-card" do %>
+    <%= link_to new_journal_entry_path, class: 'content-card' do %>
       <%= t('new_entry') %>
     <% end %>
 
     <% current_user.journal_entries.each do |entry| %>
       <div class="content-card">
-        <h2><%= entry.title %></h2>
-        <p><%= entry.date.strftime("%B %d, %Y") %></p>
+        <%= link_to journal_entry_path(entry), class: 'journal-entry-link' do %>
+          <h2><%= entry.title %></h2>
+          <p><%= l(entry.date) %></p>
+        <% end %>
       </div>
     <% end %>
   </div>

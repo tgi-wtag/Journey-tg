@@ -23,6 +23,14 @@ class JournalEntriesController < ApplicationController
     end
   end
 
+  def show
+    @journal_entry = JournalEntry.find(params[:id])
+  end
+
+  def edit
+    @journal_entry = JournalEntry.find(params[:id])
+  end
+
   private
 
   def entry_params
