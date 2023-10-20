@@ -7,16 +7,25 @@
 <body>
   <header class="navbar">
     <nav class="nav-items">
-      <%= link_to t('log'), journal_entries_path, class: "nav-link" %>
-      <%= link_to t('tasks'), tasks_path, class: "nav-link" %>
+      <%= link_to t('log'), journal_entries_path, class: 'nav-link' %>
+      <%= link_to t('tasks'), tasks_path, class: 'nav-link' %>
     </nav>
     <%= link_to root_path do %>
-      <div class="logo"><%= t('journey')%></div>
-    <% end %>
+    <div class="logo">
+      <span>J</span>
+      <span>o</span>
+      <span>u</span>
+      <span>r</span>
+      <span>n</span>
+      <span>e</span>
+      <span>y</span>
+    </div>
+  <% end %>
     <nav class="nav-items">
-      <%= link_to t('goals'), goals_path, class: "nav-link" %>
-      <%= link_to t('profile'), users_path, class: "nav-link" %>
+      <%= link_to t('goals'), goals_path, class: 'nav-link' %>
+      <%= link_to t('profile'), users_path, class: 'nav-link' %>
     </nav>
   </header>
+  <script src="<%= asset_path('typing_animation.js') %>"></script>
 </body>
 </html>
