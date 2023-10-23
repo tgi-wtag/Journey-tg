@@ -20,7 +20,10 @@
 
     <%= link_to t('journal_entry.edit_entry'), edit_journal_entry_path(@journal_entry), class: 'button' %>
     <br>
+    <%= link_to 'Download PDF', show_pdf_journal_entry_path(@journal_entry, format: :pdf) %>
+    <br>
     <%= link_to t('journal_entry.back_to_entries'), journal_entries_path, class: 'button' %>
+
   </div>
 </body>
 </html>
