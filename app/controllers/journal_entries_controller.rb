@@ -47,11 +47,11 @@ class JournalEntriesController < ApplicationController
     @entry = JournalEntry.find(params[:id])
 
     respond_to do |format|
+      format.html
       format.pdf do
-        render pdf: 'journal_entry',
+        render pdf: 'file_name',
                template: 'journal_entries/show.pdf.erb',
-               layout: 'pdf.html',
-               header: { right: '[page] of [topage]' }
+               layout: 'pdf.html'
       end
     end
   end
