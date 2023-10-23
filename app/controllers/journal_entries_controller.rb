@@ -43,7 +43,7 @@ class JournalEntriesController < ApplicationController
     end
   end
 
-  def show_pdf
+  def download
     @entry = JournalEntry.find(params[:id])
 
     respond_to do |format|

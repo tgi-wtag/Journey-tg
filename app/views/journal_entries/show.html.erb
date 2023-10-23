@@ -18,11 +18,11 @@
     <h2><%= t('journal_entry.content') %>:</h2>
     <p><%= @journal_entry.content %></p>
 
-    <%= link_to t('journal_entry.edit_entry'), edit_journal_entry_path(@journal_entry), class: 'button' %>
+    <%= link_to t('journal_entry.edit_entry'), edit_user_journal_entry_path(current_user, @journal_entry), class: 'button' %>
     <br>
-    <%= link_to 'Download PDF', show_pdf_journal_entry_path(@journal_entry, format: :pdf) %>
+    <%= link_to 'Download PDF', download_user_journal_entry_path(current_user, @journal_entry, format: :pdf) %>
     <br>
-    <%= link_to t('journal_entry.back_to_entries'), journal_entries_path, class: 'button' %>
+    <%= link_to t('journal_entry.back_to_entries'), user_journal_entries_path(current_user), class: 'button' %>
 
   </div>
 </body>
