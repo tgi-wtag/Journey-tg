@@ -49,3 +49,11 @@ en:
     update_entry: Update Entry
     update_success: Journal entry was successfully updated.
     update_failed: Journal entry could not be updated. Please check the form for errors.
+  logo:
+    j: J
+    o: o
+    u: u
+    r: r
+    n: n
+    e: e
+    y: y
