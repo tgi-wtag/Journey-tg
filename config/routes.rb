@@ -9,9 +9,15 @@ Rails.application.routes.draw do
   resources :goals
   resources :users
   resources :user_sessions
-  
+
   resources :users do
     post :logout, on: :collection
     resources :goals
+  end
+
+  resources :journal_entries do
+    member do
+      get 'show_pdf'
+    end
   end
 end
