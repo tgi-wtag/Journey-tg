@@ -40,6 +40,9 @@ class JournalEntriesController < ApplicationController
     else
       flash[:error] = t('journal_entry.update_failed')
       render :edit
+    end
+  end
+
   def show_pdf
     @journal_entry = JournalEntry.find(params[:id])
     respond_to do |format|
