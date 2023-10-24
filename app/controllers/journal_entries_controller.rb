@@ -1,4 +1,6 @@
 class JournalEntriesController < ApplicationController
+  before_action :load_journal_entry, only: [:show, :edit, :update]
+
   def index
     @journal_entries = JournalEntry.all
   end
@@ -23,17 +25,11 @@ class JournalEntriesController < ApplicationController
     end
   end
 
-  def show
-    @journal_entry = JournalEntry.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @journal_entry = JournalEntry.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @journal_entry = JournalEntry.find(params[:id])
-
     if @journal_entry.update(entry_params)
       flash[:success] = t('journal_entry.update_success')
       redirect_to journal_entry_path(@journal_entry)
