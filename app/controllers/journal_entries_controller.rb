@@ -49,9 +49,7 @@ class JournalEntriesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: @entry.title,
-               template: 'journal_entries/show.pdf.erb',
-               layout: 'pdf.html'
+        render pdf: 'file_name', template: 'journal_entries/pdf.html', formats: [:html]
       end
     end
   end
