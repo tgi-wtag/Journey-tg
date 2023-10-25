@@ -39,3 +39,13 @@ en:
   tasks: TASKS
   title: Title
   welcome: Welcome to journey!
+  journal_entry:
+    index: Journal Entries
+    new: New Journal Entry
+    title: Title
+    date: Date
+    content: Content
+    back_to_entry_details: Back To Entry Details
+    update_entry: Update Entry
+    update_success: Journal entry was successfully updated.
+    update_failed: Journal entry could not be updated. Please check the form for errors.

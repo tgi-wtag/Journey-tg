@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= t('journal_entry.show') %></title>
+</head>
+<body>
+  <div class="journal-entry">
+    <h1><%= t('journal_entry.show') %></h1>
+
+    <h2><%= t('journal_entry.title') %>:</h2>
+    <p><%= @journal_entry.title %></p>
+
+    <h2><%= t('journal_entry.date') %>:</h2>
+    <p><%= l(@journal_entry.date) %></p>
+
+    <h2><%= t('journal_entry.content') %>:</h2>
+    <p><%= @journal_entry.content %></p>
+
+    <%= link_to t('journal_entry.edit_entry'), edit_journal_entry_path(@journal_entry), class: 'button' %>
+    <br>
+    <%= link_to t('journal_entry.back_to_entries'), journal_entries_path, class: 'button' %>
+  </div>
+</body>
+</html>
