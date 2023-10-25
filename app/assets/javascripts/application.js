@@ -1,0 +1,1 @@
+//= require typing_animation
