@@ -16,7 +16,7 @@
       <div class="content-card">
         <%= link_to journal_entry_path(entry), class: 'journal-entry-link' do %>
           <h2><%= entry.title %></h2>
-          <p><%= l(entry.date) %></p>
+          <p><%= entry.date %></p>
         <% end %>
       </div>
     <% end %>
