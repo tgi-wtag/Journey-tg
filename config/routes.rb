@@ -8,8 +8,6 @@ Rails.application.routes.draw do
     post :logout, on: :collection
     resources :goals
     resources :tasks
-    resources :journal_entries do
-      get :download, to: 'journal_entries#download', on: :member
-    end
+    resources :journal_entries
   end
 end

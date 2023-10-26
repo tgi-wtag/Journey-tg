@@ -25,6 +25,13 @@ class JournalEntriesController < ApplicationController
 
   def show
     @journal_entry = JournalEntry.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'file_name', template: 'layouts/template_pdf'
+      end
+    end
   end
 
   def edit
@@ -40,17 +47,6 @@ class JournalEntriesController < ApplicationController
     else
       flash[:error] = t('journal_entry.update_failed')
       render :edit
-    end
-  end
-
-  def download
-    @entry = JournalEntry.find(params[:id])
-
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render pdf: 'file_name', template: 'journal_entries/pdf.html', formats: [:html]
-      end
     end
   end
 

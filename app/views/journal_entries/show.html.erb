@@ -20,7 +20,7 @@
 
     <%= link_to t('journal_entry.edit_entry'), edit_user_journal_entry_path(current_user, @journal_entry), class: 'button' %>
     <br>
-    <%= link_to 'Download PDF', download_user_journal_entry_path(current_user, @journal_entry, format: :pdf) %>
+
     <br>
     <%= link_to t('journal_entry.back_to_entries'), user_journal_entries_path(current_user), class: 'button' %>
 
