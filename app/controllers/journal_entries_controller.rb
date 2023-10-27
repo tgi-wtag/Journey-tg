@@ -8,15 +8,10 @@ class JournalEntriesController < ApplicationController
   end
 
   def create
-    @journal_entry = JournalEntry.new(entry_params)
-    @journal_entry.user_id = current_user.id
-
+    @journal_entry = current_user.journal_entries.new(journal_entry_params)
+  
     if @journal_entry.save
-      if @journal_entry.title.present?
-        redirect_to journal_entry_path(@journal_entry)
-      else
-        flash[:error] = t('errors.no_title')
-      end
+      redirect_to user_journal_entry_path(current_user, @journal_entry)
     else
       flash[:error] = t('errors.creating_failed')
       render :new
@@ -39,11 +34,9 @@ class JournalEntriesController < ApplicationController
   end
 
   def update
-    @journal_entry = JournalEntry.find(params[:id])
-
-    if @journal_entry.update(entry_params)
+    if @journal_entry.update(journal_entry_params)
       flash[:success] = t('journal_entry.update_success')
-      redirect_to journal_entry_path(@journal_entry)
+      redirect_to user_journal_entry_path(current_user, @journal_entry)
     else
       flash[:error] = t('journal_entry.update_failed')
       render :edit
@@ -52,7 +45,8 @@ class JournalEntriesController < ApplicationController
 
   private
 
-  def entry_params
+  def journal_entry_params
     params.require(:journal_entry).permit(:title, :date, :content)
   end
 end
+

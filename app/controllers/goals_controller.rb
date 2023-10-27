@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  before_action :load_goal, only: %i[show edit update] 
+  before_action :find_goal, only: %i[show edit update] 
 
   def goals
     @goals = Goal.all
@@ -34,7 +34,7 @@ class GoalsController < ApplicationController
     params.require(:goal).permit(:description, :deadline, :status)
   end
 
-  def load_goal
+  def find_goal
     @user = User.find(params[:user_id])
     @goal = @user.goals.find(params[:id])
   end
