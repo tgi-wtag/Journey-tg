@@ -11,7 +11,9 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
+    <% if current_user %> 
+      <%= render 'layouts/navbar' %>
+    <% end %>
     <% flash.each do |type, message| %>
     <div class="alert alert-<%= type %> text-center">
       <%= message %>
