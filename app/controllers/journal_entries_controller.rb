@@ -1,5 +1,6 @@
 class JournalEntriesController < ApplicationController
   before_action :find_entry, only: %i[show edit update] 
+
   def index
     @journal_entries = JournalEntry.all
   end
