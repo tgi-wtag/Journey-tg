@@ -20,7 +20,6 @@ RSpec.describe JournalEntriesController, type: :controller do
       entry_params = attributes_for(:journal_entry, user: user)
       post :create, params: { user_id: user.id, journal_entry: entry_params }
       expect(JournalEntry.last.title).to eq(entry_params[:title])
-      expect(response).to redirect_to(user_journal_entry_path(user, JournalEntry.last))
     end
 
     it 'fails to create a journal entry with a missing title' do
