@@ -23,7 +23,7 @@ class JournalEntriesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'file_name', template: 'layouts/template_pdf'
+        render pdf: 'file_name', template: 'journal_entries/template', formats: [:html]
       end
     end
   end
@@ -48,6 +48,6 @@ class JournalEntriesController < ApplicationController
 
   def find_entry
     @user = current_user
-    @journal_entry = @user.journal_entries.find(params[:id])
+    @journal_entry = current_user.journal_entries.find(params[:id])
   end
 end

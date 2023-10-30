@@ -27,6 +27,6 @@ WickedPdf.config = {
   # 'xvfb-run' command, in order to simulate an X server.
   #
   # use_xvfb: true,
-  exe_path: '/Users/timogiger/.asdf/shims/wkhtmltopdf',
-  layout: '/Users/timogiger/Documents/GitHub/Journey-tg/app/views/journal_entries/pdf.html',
+  # exe_path: '/Users/timogiger/.asdf/shims/wkhtmltopdf',
+  # layout: '/Users/timogiger/Documents/GitHub/Journey-tg/app/views/journal_entries/pdf.html',
 }

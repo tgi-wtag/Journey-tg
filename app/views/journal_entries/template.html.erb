@@ -1,0 +1,10 @@
+<body>
+  <div class="pdf-content">
+    <h1 class="pdf-title"><%= @journal_entry.title %></h1>
+    <p class="pdf-date"><%= @journal_entry.date %></p>
+    <div class="pdf-content">
+      <%= simple_format @journal_entry.content %>
+    </div>
+  </div>
+</body>
+
