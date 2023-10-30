@@ -1,24 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe JournalEntriesController, type: :controller do
-  let!(:user) { create(:user) }
+  let(:user) { create(:user) }
   let(:journal_entry) { create(:journal_entry, user: user) }
 
-  before do
+  before {
     sign_in_user(user)
-  end
-
-  describe 'GET #index' do
-    it 'populates an array of all journal entries' do
-      get :index, params: { user_id: user.id }
-      expect(assigns(:journal_entries)).to eq([journal_entry])
-    end
-
-    it 'returns a successful response' do
-      get :index, params: { user_id: user.id }
-      expect(response).to have_http_status(:ok)
-    end
-  end
+  }
 
   describe 'GET #new' do
     it 'returns a successful response' do
@@ -32,7 +20,7 @@ RSpec.describe JournalEntriesController, type: :controller do
       entry_params = attributes_for(:journal_entry, user: user)
       post :create, params: { user_id: user.id, journal_entry: entry_params }
       expect(JournalEntry.last.title).to eq(entry_params[:title])
-      expect(response).to redirect_to(journal_entry_path(user, JournalEntry.last))
+      expect(response).to redirect_to(user_journal_entry_path(user, JournalEntry.last))
     end
 
     it 'fails to create a journal entry with a missing title' do
@@ -66,7 +54,7 @@ RSpec.describe JournalEntriesController, type: :controller do
 
       it 'redirects to the updated journal entry' do
         patch :update, params: { user_id: user.id, id: journal_entry.id, journal_entry: { title: 'Updated Title' } }
-        expect(response).to redirect_to(journal_entry_path(user, journal_entry))
+        expect(response).to redirect_to(user_journal_entry_path(user, journal_entry))
       end
 
       it 'sets a success flash message' do

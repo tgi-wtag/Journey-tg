@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :user_sessions
   delete :logout, to: 'user_sessions#destroy'
-  post :login, to: 'user_session#create'
+  post :login, to: 'user_sessions#create'
 
   resources :users do
     post :logout, on: :collection
