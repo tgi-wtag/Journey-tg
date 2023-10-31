@@ -57,3 +57,20 @@
     flex: 0 0 calc(10% - 20px); /* 10 cards per row with spacing */
   }
 }
+.download-button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
+}
