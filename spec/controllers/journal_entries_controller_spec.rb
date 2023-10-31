@@ -44,20 +44,20 @@ RSpec.describe JournalEntriesController, type: :controller do
 
   describe 'PATCH #update' do
     context 'with valid parameters' do
+      updated_title = 'Updated Title'
       it 'updates the journal entry' do
-        updated_title = 'Updated Title'
         patch :update, params: { user_id: user.id, id: journal_entry.id, journal_entry: { title: updated_title } }
         journal_entry.reload
         expect(journal_entry.title).to eq(updated_title)
       end
 
       it 'redirects to the updated journal entry' do
-        patch :update, params: { user_id: user.id, id: journal_entry.id, journal_entry: { title: 'Updated Title' } }
+        patch :update, params: { user_id: user.id, id: journal_entry.id, journal_entry: { title: updated_title } }
         expect(response).to redirect_to(user_journal_entry_path(user, journal_entry))
       end
 
       it 'sets a success flash message' do
-        patch :update, params: { user_id: user.id, id: journal_entry.id, journal_entry: { title: 'Updated Title' } }
+        patch :update, params: { user_id: user.id, id: journal_entry.id, journal_entry: { title: updated_title  } }
         expect(flash[:success]).to be_present
       end
     end
