@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= t('placeholders.entries') %></title>
   <%= stylesheet_link_tag 'entries' %>
 </head>
 <body>
   <div class="content-container">
     <%= link_to new_user_journal_entry_path(current_user), class: 'content-card' do %>
-      <%= t('new_entry') %>
+      <h2><%= t('new_entry') %></h2>
     <% end %>
 
     <% current_user.journal_entries.each do |entry| %>

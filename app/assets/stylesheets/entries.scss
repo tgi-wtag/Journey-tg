@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin: 20px;
 }
 .content-card {
   flex: 0 0 calc(20% - 20px); /* 5 cards per row with spacing */
@@ -12,10 +13,12 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: background-color 0.3s, box-shadow 0.3s;
+  color: #263D42;
+  text-decoration: none;
 }
 .content-card:hover {
   background-color: #f0f0f0;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 20px 30px  rgba(226, 149, 120, 0.2);
 }
 @media (max-width: 1200px) {
   .content-card {
@@ -73,3 +76,7 @@
 .download-button:hover {
   background-color: #0056b3;
 }
+p, h1, h2 {
+  color:  #263D42;
+}
+
