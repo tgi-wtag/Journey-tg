@@ -1,38 +1,40 @@
 class JournalEntriesController < ApplicationController
-  before_action :load_journal_entry, only: [:show, :edit, :update]
+  before_action :find_entry, only: %i[show edit update] 
 
   def index
     @journal_entries = JournalEntry.all
   end
 
   def new
-    @journal_entry = JournalEntry.new
+    @journal_entry = current_user.journal_entries.new
   end
 
   def create
-    @journal_entry = JournalEntry.new(entry_params)
-    @journal_entry.user_id = current_user.id
-
+    @journal_entry = current_user.journal_entries.new(journal_entry_params)
+  
     if @journal_entry.save
-      if @journal_entry.title.present?
-        redirect_to journal_entry_path(@journal_entry)
-      else
-        flash[:error] = t('errors.no_title')
-      end
+      redirect_to user_journal_entries_path
     else
       flash[:error] = t('errors.creating_failed')
       render :new
     end
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'file_name', template: 'journal_entries/template', formats: [:html]
+      end
+    end
+  end
 
   def edit; end
 
   def update
-    if @journal_entry.update(entry_params)
+    if @journal_entry.update(journal_entry_params)
       flash[:success] = t('journal_entry.update_success')
-      redirect_to journal_entry_path(@journal_entry)
+      redirect_to user_journal_entry_path(current_user, @journal_entry)
     else
       flash[:error] = t('journal_entry.update_failed')
       render :edit
@@ -41,11 +43,12 @@ class JournalEntriesController < ApplicationController
 
   private
 
-  def entry_params
+  def journal_entry_params
     params.require(:journal_entry).permit(:title, :date, :content)
   end
 
-  def load_journal_entry
-    @journal_entry = JournalEntry.find(params[:id])
+  def find_entry
+    @user = current_user
+    @journal_entry = current_user.journal_entries.find(params[:id])
   end
 end

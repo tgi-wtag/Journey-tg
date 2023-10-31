@@ -1,3 +1,4 @@
+---
 en:
   alerts:
     login:
@@ -9,22 +10,33 @@ en:
   errors:
     creating_failed: There was an error while creating.
     e401: 401 Unauthorized
-    no_title: Title is required.
     no_description: Describtion is required
+    no_title: Title is required.
   goal:
-    create: Create New Goal
-    new: Add New Goal
-    edit: Edit Goal
-    description: Description
-    deadline: Deadline
-    status: Status
-    in_progress: In Progress
-    completed: Completed
-    not_started: Not Started
-    update_goal: Update Goal
     back_to_goal_details: Back to Goal Details
+    completed: Completed
+    create: Create New Goal
+    deadline: Deadline
+    description: Description
+    edit: Edit Goal
+    in_progress: In Progress
+    new: Add New Goal
+    not_started: Not Started
+    status: Status
+    update_goal: Update Goal
   goals: GOALS
   hello: Hello world
+  journal_entry:
+    back_to_entry_details: Back To Entry Details
+    content: Content
+    date: Date
+    index: Journal Entries
+    new: New Journal Entry
+    title: Title
+    update_entry: Update Entry
+    update_failed: Journal entry could not be updated. Please check the form for errors.
+    update_success: Journal entry was successfully updated.
+    download: Download this Entry.
   journey: Journey.
   log: LOG
   login_user: Login
@@ -39,13 +51,3 @@ en:
   tasks: TASKS
   title: Title
   welcome: Welcome to journey!
-  journal_entry:
-    index: Journal Entries
-    new: New Journal Entry
-    title: Title
-    date: Date
-    content: Content
-    back_to_entry_details: Back To Entry Details
-    update_entry: Update Entry
-    update_success: Journal entry was successfully updated.
-    update_failed: Journal entry could not be updated. Please check the form for errors.

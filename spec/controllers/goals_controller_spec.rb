@@ -10,42 +10,42 @@ RSpec.describe GoalsController, type: :controller do
 
   describe 'GET #index' do
     it 'returns a successful response' do
-      get :index
+      get :index, params: { user_id: user.id }
       expect(response).to have_http_status(:ok)
     end
   end
 
   describe 'GET #new' do
     it 'returns a successful response' do
-      get :new
+      get :new, params: { user_id: user.id }
       expect(response).to have_http_status(:ok)
     end
   end
 
   describe 'POST #create' do
-    it 'creates a new goal' do
+    it 'creates a new goal and redirects to user_goals_path' do
       goal_params = attributes_for(:goal, user: user)
-      post :create, params: { goal: goal_params }
+      post :create, params: { user_id: user.id, goal: goal_params }
       expect(Goal.last.description).to eq(goal_params[:description])
-      expect(response).to redirect_to(goal_path(Goal.last))
+      expect(response).to redirect_to(user_goals_path)
     end
 
     it 'fails to create a goal with missing description' do
-      post :create, params: { goal: { description: '', status: 'setted' } }
+      post :create, params: { user_id: user.id, goal: { description: '', status: 'setted' } }
       expect(response).to render_template(:new)
     end
   end
 
   describe 'GET #show' do
     it 'returns a successful response' do
-      get :show, params: { id: goal.id }
+      get :show, params: { user_id: user.id, id: goal.id }
       expect(response).to have_http_status(:ok)
     end
   end
 
   describe 'GET #edit' do
     it 'returns a successful response' do
-      get :edit, params: { id: goal.id }
+      get :edit, params: { user_id: user.id, id: goal.id }
       expect(response).to have_http_status(:ok)
     end
   end

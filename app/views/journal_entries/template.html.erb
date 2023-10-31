@@ -1,0 +1,12 @@
+<body>
+  <div class="pdf-content">
+    <h2><%= t('journal_entry.title') %>:</h2>
+    <h1 class="pdf-title"><%= @journal_entry.title %></h1>
+    <h2><%= t('journal_entry.date') %>:</h2>
+    <p class="pdf-date"><%= @journal_entry.date %></p>
+    <h2><%= t('journal_entry.content') %>:</h2>
+    <div class="pdf-content">
+      <%= simple_format @journal_entry.content %>
+    </div>
+  </div>
+</body>

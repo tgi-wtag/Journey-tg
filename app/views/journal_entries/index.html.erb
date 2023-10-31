@@ -8,13 +8,13 @@
 </head>
 <body>
   <div class="content-container">
-    <%= link_to new_journal_entry_path, class: 'content-card' do %>
+    <%= link_to new_user_journal_entry_path(current_user), class: 'content-card' do %>
       <%= t('new_entry') %>
     <% end %>
 
     <% current_user.journal_entries.each do |entry| %>
       <div class="content-card">
-        <%= link_to journal_entry_path(entry), class: 'journal-entry-link' do %>
+        <%= link_to user_journal_entry_path(current_user, entry), class: 'journal-entry-link' do %>
           <h2><%= entry.title %></h2>
           <p><%= entry.date %></p>
         <% end %>
