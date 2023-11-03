@@ -17,8 +17,8 @@
   text-decoration: none;
 }
 .content-card:hover {
-  background-color: #f0f0f0;
-  box-shadow: 0 20px 30px  rgba(226, 149, 120, 0.2);
+  background-color: hsl(0, 0%, 94%);
+  box-shadow: 0 20px 30px  #94270033;
 }
 @media (max-width: 1200px) {
   .content-card {
@@ -79,4 +79,3 @@
 p, h1, h2 {
   color:  #263D42;
 }
-
