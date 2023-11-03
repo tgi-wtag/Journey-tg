@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   resources :users do
     post :logout, on: :collection
+    post :update_role, to: 'users#update_role'
+
+
+
+    # get :update_role, to: 'users#update_role'
     resources :goals
     resources :tasks
     resources :journal_entries
