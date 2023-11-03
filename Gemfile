@@ -13,6 +13,7 @@ gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.7'
 gem 'rubocop', require: false
 gem 'rufo'
+gem 'sassc-rails', '~> 2.0'
 gem 'simple_form'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
