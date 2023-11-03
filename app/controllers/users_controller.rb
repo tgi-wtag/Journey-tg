@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-  
   def index
-    if current_user.admin?
+    if current_user.admin? || current_user.super_admin?
       @users = User.all
     else
     end
   end
+
   def new
     @user = User.new
   end
@@ -19,16 +19,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
+  def update_role
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to users_path, notice: 'User role updated successfully.'
+    if @user.user?
+      @user.update(role: :admin)
+      flash[:notice] = t('user_role_updated_admin')
+    elsif @user.admin?
+      @user.update(role: :user)
+      flash[:notice] = t('user_role_updated_user')
     else
-      flash[:error] = 'Failed to update user role.'
-      render :index
+      flash[:error] = t('role_update_failed')
     end
+    redirect_to users_path
   end
-
 
   private
 

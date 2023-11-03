@@ -12,4 +12,3 @@ class User < ApplicationRecord
     role == 'admin'
   end
 end
-ActiveRecord::SchemaMigration.find_by(version: '20231004114712').destroy

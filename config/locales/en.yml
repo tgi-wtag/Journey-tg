@@ -52,3 +52,6 @@ en:
   title: Title
   welcome: Welcome to journey!
   update_role: Give Admin rights to User
+  user_role_updated_admin: "User role updated to admin."
+  user_role_updated_user: "User role updated to user."
+  role_update_failed: "Role update failed."
