@@ -9,9 +9,9 @@
       <li>
         <%= user.first_name %>
         <% if user.admin? %>
-          <%= link_to t('make_user'), update_role_user_path(user), method: :patch %><br>
+          <%= link_to t('make_user'), update_role_user_path(user), method: :patch, data: { turbo_method: :patch }  %><br>
         <% elsif user.user? %>
-          <%= link_to t('make_admin'), update_role_user_path(user), method: :patch %><br>
+          <%= link_to t('make_admin'), update_role_user_path(user), method: :patch, data: { turbo_method: :patch }  %><br>
         <% end %>
       </li>
     <% end %>
@@ -27,7 +27,7 @@
       <li>
         <%= user.first_name %>
         <% if user.user? %>
-          <%= link_to t('make_admin'), user_update_role_path(user), method: :post %><br>
+          <%= link_to t('make_admin'), update_role_user_path(user), method: :patch, data: { turbo_method: :patch }  %>
         <% end %>
       </li><br>
     <% end %>

@@ -15,10 +15,11 @@
       <%= render 'layouts/navbar' %>
     <% end %>
     <% flash.each do |type, message| %>
-    <div class="alert alert-<%= type %> text-center">
-      <%= message %>
-    </div>
-  <% end %>
+      <div class="alert alert-<%= type %> text-center">
+        <%= message %>
+      </div>
+    <% end %>
+    <%= turbo_stream_from "user_update" %>
     <%= yield %>
   </body>
 </html>
