@@ -21,8 +21,9 @@ class UsersController < ApplicationController
 
   def update_role
     @user = User.find(params[:id])
+    
     if @user.user?
-      @user.update(role: :admin)
+      @user.role = 'admin'
       flash[:notice] = t('user_role_updated_admin')
     elsif @user.admin?
       @user.update(role: :user)

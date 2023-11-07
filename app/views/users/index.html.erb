@@ -4,37 +4,31 @@
   <p><%= current_user.last_name %></p>
   <%= link_to t('logout_user'), user_session_path(current_user), data: { turbo_method: :delete } %><br>
   <h1><%= t('users.index') %></h1>
-  <ul>
     <% @users.each do |user| %>
-      <li>
-        <%= user.first_name %>
-        <% if user.admin? %>
-          <%= link_to t('make_user'), update_role_user_path(user), method: :patch, data: { turbo_method: :patch }  %><br>
-        <% elsif user.user? %>
-          <%= link_to t('make_admin'), update_role_user_path(user), method: :patch, data: { turbo_method: :patch }  %><br>
-        <% end %>
-      </li>
+      <%= user.first_name %>
+      <% if user.admin? %>
+        <%= link_to t('make_user'), update_role_user_path(user), data: { turbo_method: :patch }  %><br>
+      <% elsif user.user? %>
+        <%= link_to t('make_admin'), update_role_user_path(user), data: { turbo_method: :patch }  %><br>
+      <% end %>
     <% end %>
-  </ul>
 <% elsif current_user.admin? %>
   <h1><%= t('placeholders.profile') %></h1>
   <p><%= current_user.first_name %></p>
   <p><%= current_user.last_name %></p>
   <%= link_to t('logout_user'), user_session_path(current_user), data: { turbo_method: :delete } %><br>
   <h1><%= t('users.index') %></h1>
-  <ul>
     <% @users.each do |user| %>
-      <li>
-        <%= user.first_name %>
-        <% if user.user? %>
-          <%= link_to t('make_admin'), update_role_user_path(user), method: :patch, data: { turbo_method: :patch }  %>
-        <% end %>
-      </li><br>
+      <%= user.first_name %>
+      <% if user.user? %>
+        <%= link_to t('make_admin'), update_role_user_path(user, role: 'admin'), data: { turbo_method: :patch }  %>
+      <% end %>
+      <br>
     <% end %>
-  </ul>
 <% else %>
   <h1><%= t('placeholders.profile') %></h1>
   <p><%= current_user.first_name %></p>
   <p><%= current_user.last_name %></p>
   <%= link_to t('logout_user'), user_session_path(current_user), data: { turbo_method: :delete } %><br>
 <% end %>
+ 
