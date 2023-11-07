@@ -8,7 +8,4 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates_confirmation_of :password
   enum role: { user: 0, admin: 1, super_admin: 2 }
-  def admin?
-    role == 'admin'
-  end
 end
