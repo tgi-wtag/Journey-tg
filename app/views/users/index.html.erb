@@ -5,10 +5,11 @@
   <%= link_to t('logout_user'), user_session_path(current_user), data: { turbo_method: :delete } %><br>
   <h1><%= t('users.index') %></h1>
     <% @users.each do |user| %>
-      <%= user.first_name %>
       <% if user.admin? %>
+        <%= user.first_name %>
         <%= link_to t('make_user'), update_role_user_path(user), data: { turbo_method: :patch }  %><br>
       <% elsif user.user? %>
+        <%= user.first_name %>
         <%= link_to t('make_admin'), update_role_user_path(user), data: { turbo_method: :patch }  %><br>
       <% end %>
     <% end %>
@@ -19,8 +20,8 @@
   <%= link_to t('logout_user'), user_session_path(current_user), data: { turbo_method: :delete } %><br>
   <h1><%= t('users.index') %></h1>
     <% @users.each do |user| %>
-      <%= user.first_name %>
       <% if user.user? %>
+        <%= user.first_name %>
         <%= link_to t('make_admin'), update_role_user_path(user, role: 'admin'), data: { turbo_method: :patch }  %>
       <% end %>
       <br>
@@ -31,4 +32,3 @@
   <p><%= current_user.last_name %></p>
   <%= link_to t('logout_user'), user_session_path(current_user), data: { turbo_method: :delete } %><br>
 <% end %>
- 
