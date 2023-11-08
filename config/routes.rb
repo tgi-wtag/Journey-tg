@@ -6,13 +6,10 @@ Rails.application.routes.draw do
 
   resources :users do
     post :logout, on: :collection
-
     member do
       patch :update_role
     end
-    # patch :update_role, to: 'users#update_role'
 
-    # get :update_role, to: 'users#update_role'
     resources :goals
     resources :tasks
     resources :journal_entries

@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   def index
     if current_user.admin? || current_user.super_admin?
       @users = User.all
-    else
     end
   end
 
