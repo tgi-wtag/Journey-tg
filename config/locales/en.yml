@@ -10,50 +10,46 @@ en:
   errors:
     creating_failed: There was an error while creating.
     e401: 401 Unauthorized
-    no_description: Describtion is required
-    no_title: Title is required.
   goal:
     back_to_goal_details: Back to Goal Details
-    completed: Completed
     create: Create New Goal
     deadline: Deadline
     description: Description
     edit: Edit Goal
-    in_progress: In Progress
-    new: Add New Goal
-    not_started: Not Started
     status: Status
     update_goal: Update Goal
   goals: GOALS
-  hello: Hello world
   journal_entry:
+    back_to_entries: BacK To Entries
     back_to_entry_details: Back To Entry Details
     content: Content
     date: Date
-    index: Journal Entries
-    new: New Journal Entry
+    download: Download this Entry.
+    edit: Edit
+    edit_entry: Edit Entry
+    show: Show Entry
     title: Title
     update_entry: Update Entry
     update_failed: Journal entry could not be updated. Please check the form for errors.
     update_success: Journal entry was successfully updated.
-    download: Download this Entry.
   journey: Journey.
   log: LOG
   login_user: Login
   logout_user: Logout
+  make_admin: give admin rights to user
+  make_user: take admin rights from admin
   new_entry: Add New Log Entry
+  new_goal: New Goal
   placeholders:
     entries: Entries View
     goals: Goals View
     profile: My Profile
     tasks: Tasks View
   profile: PROFILE
+  role_update_failed: Role update failed.
   tasks: TASKS
-  title: Title
-  welcome: Welcome to journey!
-  update_role: Give Admin rights to User
   user_role_updated_admin: User role updated to admin.
   user_role_updated_user: User role updated to user.
-  role_update_failed: Role update failed.
   users:
     index: Other Users
+  welcome: Welcome to journey!
