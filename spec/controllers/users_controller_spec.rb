@@ -50,8 +50,7 @@ RSpec.describe UsersController, type: :controller do
     it 'when the role update fails does not change the user role' do
       allow_any_instance_of(User).to receive(:update).and_return(false)
       patch :update_role, params: { id: user.id, role: 'user' }
-      user.reload
-      expect(user.role).to eq('admin')
+      expect(user.reload.role).to eq('admin')
     end
 
     it 'when updating the role to admin sets a flash notice when updating to admin' do
