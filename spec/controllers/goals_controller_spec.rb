@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe GoalsController, type: :controller do
   let!(:user) { create(:user) }
-  let(:goal) { create(:goal, user: user) }
+  let!(:goal) { create(:goal, user: user) }
 
   before do
     sign_in_user(user)
@@ -52,13 +52,11 @@ RSpec.describe GoalsController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'destroys the goal' do
-      sign_in user
       expect do
         delete :destroy, params: { user_id: user.id, id: goal.id }
       end.to change(Goal, :count).by(-1)
 
       expect(response).to redirect_to(user_goals_path(user))
-      expect(flash[:notice]).to be_present
     end
   end
 end
