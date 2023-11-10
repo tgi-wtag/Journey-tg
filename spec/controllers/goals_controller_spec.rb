@@ -49,4 +49,17 @@ RSpec.describe GoalsController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
   end
+
+  describe 'DELETE #destroy' do
+    it 'destroys the goal' do
+      sign_in user
+      expect do
+        delete :destroy, params: { user_id: user.id, id: goal.id }
+      end.to change(Goal, :count).by(-1)
+
+      expect(response).to redirect_to(user_goals_path(user))
+      expect(flash[:notice]).to be_present
+    end
+  end
 end
+
