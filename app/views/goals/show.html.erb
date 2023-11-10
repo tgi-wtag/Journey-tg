@@ -18,7 +18,8 @@
     <h2><%= t('goal.status') %>:</h2>
     <p><%= @goal.status %></p>
 
-    <%= link_to t('goal.edit'), edit_user_goal_path(@user, @goal), class: 'edit-button' %>
+    <%= link_to t('goal.edit'), edit_user_goal_path(@user, @goal) %><br>
+    <%= link_to t('goals.delete'), user_goal_path(@user, @goal), method: :delete %>
     
     <p><%= link_to t('goal.back_to_goal_details'), user_goals_path %></p>
   </div>

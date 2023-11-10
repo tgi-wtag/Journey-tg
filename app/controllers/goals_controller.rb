@@ -28,6 +28,11 @@ class GoalsController < ApplicationController
     end
   end
 
+  def destroy
+    @goal.destroy
+    redirect_to user_goals_path(@user)
+  end
+
   private
 
   def goal_params
