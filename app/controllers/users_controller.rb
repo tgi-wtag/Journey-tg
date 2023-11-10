@@ -22,11 +22,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     if @user.user?
-      @user.update(role: 'admin')
+      @user.update(role: :admin)
       puts @user.errors.full_messages
       flash[:notice] = t('user_role_updated_admin')
     elsif @user.admin?
-      @user.update(role: 'user')
+      @user.update(role: :user)
       puts @user.errors.full_messages
       flash[:notice] = t('user_role_updated_user')
     else
