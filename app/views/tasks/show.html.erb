@@ -1,6 +1,0 @@
-<h1><%= t('tasks.task_details') %></h1>
-<p><strong><%= t('tasks.title') %>:</strong> <%= @task.title %></p>
-<p><strong><%= t('tasks.description') %>:</strong> <%= @task.description %></p>
-<p><strong><%= t('tasks.status') %>:</strong> <%= @task.status %></p>
-<%= link_to t('tasks.edit'), edit_user_task_path(@user, @task) %><br>
-<%= link_to t('tasks.back_to_tasks'), user_tasks_path(@user) %>

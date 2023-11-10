@@ -9,8 +9,4 @@ RSpec.describe Task, type: :model do
         .backed_by_column_of_type(:integer)
     end
   end
-
-  describe 'associations' do
-    it { should belong_to(:user) }
-  end
 end

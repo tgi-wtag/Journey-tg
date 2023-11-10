@@ -20,7 +20,7 @@ en:
     update_goal: Update Goal
   goals: GOALS
   journal_entry:
-    back_to_entries: Back to Entries
+    back_to_entries: BacK To Entries
     back_to_entry_details: Back To Entry Details
     content: Content
     date: Date
@@ -36,8 +36,8 @@ en:
   log: LOG
   login_user: Login
   logout_user: Logout
-  make_admin: Give admin rights to user
-  make_user: Take admin rights from admin
+  make_admin: give admin rights to user
+  make_user: take admin rights from admin
   new_entry: Add New Log Entry
   new_goal: New Goal
   placeholders:
@@ -47,18 +47,7 @@ en:
     tasks: Tasks View
   profile: PROFILE
   role_update_failed: Role update failed.
-  task:
-    submit: safe task
-  tasks:
-    back_to_tasks: Back to Tasks
-    description: Description
-    edit: Edit
-    edit_task: Edit Task
-    new_task: New Task
-    status: Status
-    task_details: Task Details
-    tasks: TASKS
-    title: Title
+  tasks: TASKS
   user_role_updated_admin: User role updated to admin.
   user_role_updated_user: User role updated to user.
   users:
