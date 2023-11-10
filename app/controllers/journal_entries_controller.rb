@@ -44,7 +44,7 @@ class JournalEntriesController < ApplicationController
   private
 
   def journal_entry_params
-    params.require(:journal_entry).permit(:title, :date, :content)
+    params.require(:journal_entry).permit(:title, :date, :content, :attached_document )
   end
 
   def find_entry
