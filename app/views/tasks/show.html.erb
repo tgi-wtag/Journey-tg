@@ -3,4 +3,5 @@
 <p><strong><%= t('tasks.description') %>:</strong> <%= @task.description %></p>
 <p><strong><%= t('tasks.status') %>:</strong> <%= @task.status %></p>
 <%= link_to t('tasks.edit'), edit_user_task_path(@user, @task) %><br>
+<%= link_to t('tasks.delete'), user_task_path(@user, @task), data: {turbo_method: :delete} %><br>
 <%= link_to t('tasks.back_to_tasks'), user_tasks_path(@user) %>
