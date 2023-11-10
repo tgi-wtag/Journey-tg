@@ -8,7 +8,7 @@
   <header class="navbar">
     <nav class="nav-items">
       <%= link_to t('log'), user_journal_entries_path(current_user), class: 'nav-link' %>
-      <%= link_to t('tasks'), user_tasks_path(current_user), class: 'nav-link' %>
+      <%= link_to t('tasks.tasks'), user_tasks_path(current_user), class: 'nav-link' %>
     </nav>
     <%= link_to root_path do %>
       <div class="logo"><%= t('journey') %></div>
