@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  before_action :find_goal, only: %i[show edit update] 
+  before_action :find_goal, only: %i[show edit update destroy] 
 
   def goals
     @goals = Goal.all
