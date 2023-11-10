@@ -60,4 +60,3 @@ RSpec.describe GoalsController, type: :controller do
     end
   end
 end
-
