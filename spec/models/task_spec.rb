@@ -11,6 +11,6 @@ RSpec.describe Task, type: :model do
   end
 
   describe 'associations' do
-    it { should belong_to(:user) }
+    it { is_expected.to belong_to(:user) }
   end
 end
