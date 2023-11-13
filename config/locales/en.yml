@@ -38,6 +38,7 @@ en:
     update_failed: Journal entry could not be updated. Please check the form for errors.
     update_success: Journal entry was successfully updated.
     download: Download this Entry.
+    view_file: View the Attached File
   journey: Journey.
   log: LOG
   login_user: Login

@@ -254,6 +254,8 @@ GEM
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     rufo (0.16.2)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -336,7 +338,8 @@ DEPENDENCIES
   rspec-rails (~> 6.0)
   rubocop
   rufo
-  sassc-rails
+  sass-rails
+  sassc
   selenium-webdriver
   shoulda-matchers (~> 5.3)
   simple_form
