@@ -29,7 +29,11 @@ class GoalsController < ApplicationController
   end
 
   def destroy
-    @goal.destroy
+    if @goal.destroy
+      flash[:success] = t('errors.destroy_success')
+    else
+      flash[:error] = t('errors.destroy_failed')
+    end
     redirect_to user_goals_path(@user)
   end
 

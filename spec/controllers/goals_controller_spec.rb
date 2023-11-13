@@ -55,8 +55,22 @@ RSpec.describe GoalsController, type: :controller do
       expect do
         delete :destroy, params: { user_id: user.id, id: goal.id }
       end.to change(Goal, :count).by(-1)
-
+  
       expect(response).to redirect_to(user_goals_path(user))
+      expect(flash[:success]).to eq I18n.t('errors.destroy_success')
+      expect(flash[:error]).to be_nil
+    end
+  
+    it 'fails to destroy the goal' do
+      allow_any_instance_of(Goal).to receive(:destroy).and_return(false)
+  
+      expect do
+        delete :destroy, params: { user_id: user.id, id: goal.id }
+      end.not_to change(Goal, :count)
+  
+      expect(response).to redirect_to(user_goals_path(user))
+      expect(flash[:success]).to be_nil
+      expect(flash[:error]).to eq I18n.t('errors.destroy_failed')
     end
   end
 end
