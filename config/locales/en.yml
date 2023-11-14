@@ -12,6 +12,8 @@ en:
     e401: 401 Unauthorized
     no_description: Describtion is required
     no_title: Title is required.
+    destroy_success: Goal Deleted!
+    destroy_failed: Goal didnt get deleted as expected.
   goal:
     back_to_goal_details: Back to Goal Details
     completed: Completed

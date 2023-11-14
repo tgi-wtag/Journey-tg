@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  before_action :find_goal, only: %i[show edit update] 
+  before_action :find_goal, only: %i[show edit update destroy] 
 
   def goals
     @goals = Goal.all
@@ -26,6 +26,15 @@ class GoalsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    if @goal.destroy
+      flash[:success] = t('errors.destroy_success')
+    else
+      flash[:error] = t('errors.destroy_failed')
+    end
+    redirect_to user_goals_path(@user)
   end
 
   private
