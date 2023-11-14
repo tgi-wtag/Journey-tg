@@ -15,6 +15,8 @@ gem 'rubocop', require: false
 gem 'rufo'
 gem 'sassc-rails'
 gem 'simple_form'
+gem 'sassc'
+gem 'sass-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
