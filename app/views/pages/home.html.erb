@@ -1,34 +1,54 @@
-<% if current_user %>
-  <h1><%= t('welcome') %> <%= current_user.first_name %></h1>
-  <h2><%= t('journal_entries_today') %></h2>
-    <% today_journal_entries = current_user.journal_entries.where(date: Date.today) %>
-    <div class="content-container">
-      <% today_journal_entries.each do |entry| %>
-        <div class="content-card">
-          <h3><%= entry.title %></h3>
-          <p><%= entry.content %></p>
-        </div>
-      <% end %>
-    </div>
-  <h2><%= t('goals_today') %></h2><br>
-    <% today_goals = current_user.goals.where(deadline: Date.today) %>
-    <div class="content-container">
-      <% today_goals.each do |goal| %>
-        <div class="content-card">
-          <h3><%= goal.description %></h3>
-          <p><%= goal.status %></p>
-        </div>
-      <% end %>
-    </div>
-<% else %>
-  <div class="content-container">
-    <%= link_to new_user_path, class: "content-card" do %>
-      <%= t('create_user') %>
+<div class="grid-container">
+  <div class="left-column">
+    <% if current_user %>
+      <h1><%= t('welcome') %> <%= current_user.first_name %></h1>
+      <h2><%= t('journal_entries_today') %></h2>
+      <% today_journal_entries = current_user.journal_entries.where(date: Date.today) %>
+      <div class="content-container">
+        <% today_journal_entries.each do |entry| %>
+          <div class="content-card">
+            <h3><%= entry.title %></h3>
+            <p><%= entry.content %></p>
+          </div>
+        <% end %>
+      </div>
+      <h2><%= t('goals_today') %></h2>
+      <div class="content-container">
+        <% today_goals = current_user.goals.where(deadline: Date.today) %>
+        <% today_goals.each do |goal| %>
+          <div class="content-card">
+            <h3><%= goal.description %></h3>
+            <p><%= goal.status %></p>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="content-container">
+        <%= link_to new_user_path, class: "content-card" do %>
+          <%= t('create_user') %>
+        <% end %>
+      </div>
+      <div class="content-container">
+        <%= link_to new_user_session_path, class: "content-card" do %>
+          <%= t('login_user') %>
+        <% end %>
+      </div>
     <% end %>
-    <div class="content-container">
-      <%= link_to new_user_session_path, class: "content-card" do %>
-        <%= t('login_user') %>
-      <% end %>
-    </div>
   </div>
-<% end %>
+  <div class="right-column">
+    <% if current_user %>
+      <h2><%= t('tasks.todo') %></h2>
+      <ul class="todo-list">
+        <% today_tasks = current_user.tasks.where('DATE(created_at) = ?', Date.today) %>
+        <% today_tasks.each do |task| %>
+          <li>
+            <label>  
+              <%= check_box_tag("task_status", value = "1", checked = (task.status == 'finished'), disabled: true) %>
+              <%= task.title %>
+            </label>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

@@ -64,6 +64,7 @@ en:
     task_details: Task Details
     tasks: TASKS
     title: Title
+    todo: TODO List
   user_role_updated_admin: User role updated to admin.
   user_role_updated_user: User role updated to user.
   users:
