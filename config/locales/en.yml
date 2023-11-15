@@ -10,6 +10,10 @@ en:
   errors:
     creating_failed: There was an error while creating.
     e401: 401 Unauthorized
+    no_description: Describtion is required
+    no_title: Title is required.
+    destroy_success: Goal Deleted!
+    destroy_failed: Goal didnt get deleted as expected.
   goal:
     back_to_goal_details: Back to Goal Details
     create: Create New Goal
@@ -20,7 +24,7 @@ en:
     update_goal: Update Goal
   goals: GOALS
   journal_entry:
-    back_to_entries: BacK To Entries
+    back_to_entries: Back to Entries
     back_to_entry_details: Back To Entry Details
     content: Content
     date: Date
@@ -32,12 +36,14 @@ en:
     update_entry: Update Entry
     update_failed: Journal entry could not be updated. Please check the form for errors.
     update_success: Journal entry was successfully updated.
+    download: Download this Entry.
+    view_file: View the Attached File
   journey: Journey.
   log: LOG
   login_user: Login
   logout_user: Logout
-  make_admin: give admin rights to user
-  make_user: take admin rights from admin
+  make_admin: Give admin rights to user
+  make_user: Take admin rights from admin
   new_entry: Add New Log Entry
   new_goal: New Goal
   placeholders:
@@ -47,7 +53,18 @@ en:
     tasks: Tasks View
   profile: PROFILE
   role_update_failed: Role update failed.
-  tasks: TASKS
+  task:
+    submit: safe task
+  tasks:
+    back_to_tasks: Back to Tasks
+    description: Description
+    edit: Edit
+    edit_task: Edit Task
+    new_task: New Task
+    status: Status
+    task_details: Task Details
+    tasks: TASKS
+    title: Title
   user_role_updated_admin: User role updated to admin.
   user_role_updated_user: User role updated to user.
   users:
