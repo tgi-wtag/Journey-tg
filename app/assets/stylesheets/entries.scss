@@ -83,27 +83,20 @@ p, h1, h2 {
   display: flex;
   justify-content: space-between;
 }
-
 .left-column {
   flex: 2;
   padding: 10px;
 }
-
 .right-column {
   flex: 1;
   padding: 10px;
 }
-
 ul.todo-list {
   display: block;
 }
-
 .task-checkbox {
   margin-right: 10px;
 }
-
-
-
 body {
   display: block;
   margin: 8px;
