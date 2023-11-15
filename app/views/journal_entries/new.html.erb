@@ -1,8 +1,10 @@
 <h1><%= t('create_entry') %></h1>
 <%= simple_form_for @journal_entry, url: user_journal_entries_path do |f| %>
-  <%= f.input :title %>
-  <%= f.input :date %>
-  <%= f.input :content, as: :text %>
-  <%= f.file_field :attached_document %><br><br>
-  <%= f.button :submit %>
+  <form>
+    <%= f.input :title, label: 'Title' %>
+    <%= f.input :date, label: 'Date' %>
+    <%= f.input :content, as: :text, label: 'Content' %>
+    <%= f.file_field :attached_document, label: 'Attached Document' %><br><br>
+    <%= f.button :submit %>
+  </form>
 <% end %>

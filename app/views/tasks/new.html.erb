@@ -1,3 +1,12 @@
-<h1><%= t('tasks.new_task') %></h1>
-<%= render 'form' %>
-<%= link_to t('tasks.back_to_tasks'), user_tasks_path(@user) %>
+<div class="new-container">
+  <h1><%= t('tasks.new_task') %></h1>
+  <%= simple_form_for [@user, Task.new] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.select :status, Task.statuses.keys.map { |status| [t("task.statuses.#{status}"), status] } %><br>
+    <div class='actions'>
+      <%= f.submit t('task.submit'), class: 'button' %>
+      <%= link_to t('tasks.back_to_tasks'), user_tasks_path(@user), class: 'button' %>
+    </div>
+  <% end %>
+</div>

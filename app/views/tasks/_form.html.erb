@@ -1,9 +1,0 @@
-<%= simple_form_for [@user, @task] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.select :status, Task.statuses.keys.map { |status| [t("task.statuses.#{status}"), status] } %><br>
-
-  <div class='actions'>
-    <%= f.submit t('task.submit') %>
-  </div>
-<% end %>

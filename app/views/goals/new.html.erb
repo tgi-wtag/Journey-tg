@@ -1,7 +1,11 @@
-<h1><%= t('goal.create') %></h1>
-<%= simple_form_for @goal, url: user_goals_path do |f| %>
-  <%= f.input :description %>
-  <%= f.date_field :deadline %><br>
-  <%= f.select :status, Goal.statuses.keys.to_a.map { |status| [t("goal.statuses.#{status}"), status] } %><br>
-  <%= f.button :submit, t('goal.create') %>
-<% end %>
+<div class="container">
+  <div class="form-container">
+    <h1><%= t('goal.create') %></h1>
+    <%= simple_form_for @goal, url: user_goals_path do |f| %>
+      <%= f.input :description %>
+      <%= f.date_field :deadline %><br>
+      <%= f.select :status, Goal.statuses.keys.to_a.map { |status| [t("goal.statuses.#{status}"), status] } %><br>
+      <%= f.submit t('goal.create'), class: 'button' %>
+    <% end %>
+  </div>
+</div>
