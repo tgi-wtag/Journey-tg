@@ -337,7 +337,7 @@ DEPENDENCIES
   rubocop
   rufo
   sassc
-  sassc-rails (~> 2.0)
+  sassc-rails
   selenium-webdriver
   shoulda-matchers (~> 5.3)
   simple_form
