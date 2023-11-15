@@ -4,36 +4,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 0px solid #000;
-  background: #FFFADC;
+  background: #938581;
 }
-
 .logo {
   flex-grow: 1;
-  color: #615756;
+  color: #FFFFFF;
   text-align: center;
-  font-family: 'Cinzel', serif;
-  font-size: 100px;
-  font-weight: 700;
+  font-family: 'Arial';
+  font-size: 220px;
+  font-weight: 900;
   line-height: normal;
   text-decoration: none;
+  transition: font-size 0.2s;
 }
-
 .nav-items {
   display: flex;
   align-items: center;
-  flex-grow: 1;
   justify-content: space-between;
-  margin: 0 40px;
+  margin: 0 5px;
+  transition: flex-direction 0.3s;
 }
-
 a {
   text-decoration: none;
 }
-
 .nav-link {
   text-decoration: none;
-  color: #615756;
+  color: #263D42;
+
   font-family: 'Julius Sans One', sans-serif;
   font-size: 30px;
   font-style: normal;
@@ -41,11 +38,71 @@ a {
   line-height: normal;
   margin: 0 10px;
 }
-
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 1600px) {
+  .logo {
+    font-size: 150px;
+    transition: font-size 0.2s;
+  }
+  .nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 5px;
+    transition: flex-direction 0.3s;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: #263D42;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .logo {
+    font-size: 150px;
+    transition: font-size 0.2s;
+  }
+  .nav-items {
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0;
+    transition: flex-direction 0.3s;
+  }
+  .nav-link {
+    margin-right: 70px;
+    font-size: 24px;
+    transition: font-size 0.2s;
+    border-bottom: 1px solid white;
+    width: 100px;
+  }
+}
+@media screen and (max-width: 880px) {
+  .logo {
+    font-size: 15vw;
+    transition: font-size 0.2s;
+  }
+  .nav-items {
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0;
+    transition: flex-direction 0.3s;  
+  }
+  .nav-link {
+    margin-right: 70px;
+    font-size: 24px;
+    transition: font-size 0.2s;
+    border-bottom: 1px solid white;
+    width: 100px;
+  }
 }

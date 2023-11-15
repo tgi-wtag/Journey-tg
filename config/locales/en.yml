@@ -23,6 +23,8 @@ en:
     status: Status
     update_goal: Update Goal
   goals: GOALS
+  goals_today: Goals which are due today.
+  hello: Hello world
   journal_entry:
     back_to_entries: Back to Entries
     back_to_entry_details: Back To Entry Details
@@ -37,6 +39,7 @@ en:
     update_failed: Journal entry could not be updated. Please check the form for errors.
     update_success: Journal entry was successfully updated.
     download: Download this Entry.
+  journey: JOURNEY.
     view_file: View the Attached File
   journey: Journey.
   log: LOG
@@ -65,6 +68,7 @@ en:
     task_details: Task Details
     tasks: TASKS
     title: Title
+    todo: TODO List
   user_role_updated_admin: User role updated to admin.
   user_role_updated_user: User role updated to user.
   users:
