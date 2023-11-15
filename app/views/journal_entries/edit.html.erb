@@ -4,6 +4,7 @@
   <%= f.input :title %>
   <%= f.input :date, as: :date %>
   <%= f.input :content, as: :text, input_html: { rows: 5 } %>
+  <%= f.file_field :attached_document %><br><br>
 
   <div class='actions'>
     <%= f.submit t('journal_entry.update_entry') %>

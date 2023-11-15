@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :users do
     post :logout, on: :collection
+    member do
+      patch :update_role
+    end
+
     resources :goals
     resources :tasks
     resources :journal_entries
