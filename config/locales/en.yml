@@ -16,25 +16,22 @@ en:
     destroy_failed: Goal didnt get deleted as expected.
   goal:
     back_to_goal_details: Back to Goal Details
-    completed: Completed
     create: Create New Goal
     deadline: Deadline
     description: Description
     edit: Edit Goal
-    in_progress: In Progress
-    new: Add New Goal
-    not_started: Not Started
     status: Status
     update_goal: Update Goal
   goals: GOALS
-  hello: Hello world
   journal_entry:
     back_to_entries: Back to Entries
     back_to_entry_details: Back To Entry Details
     content: Content
     date: Date
-    index: Journal Entries
-    new: New Journal Entry
+    download: Download this Entry.
+    edit: Edit
+    edit_entry: Edit Entry
+    show: Show Entry
     title: Title
     update_entry: Update Entry
     update_failed: Journal entry could not be updated. Please check the form for errors.
@@ -48,10 +45,11 @@ en:
   make_admin: Give admin rights to user
   make_user: Take admin rights from admin
   new_entry: Add New Log Entry
+  new_goal: New Goal
   placeholders:
     entries: Entries View
     goals: Goals View
-    profile: Profile View
+    profile: My Profile
     tasks: Tasks View
   profile: PROFILE
   role_update_failed: Role update failed.
