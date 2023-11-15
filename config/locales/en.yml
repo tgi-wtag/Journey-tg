@@ -25,6 +25,7 @@ en:
     status: Status
     update_goal: Update Goal
   goals: GOALS
+  goals_today: Goals which are due today.
   hello: Hello world
   journal_entry:
     back_to_entries: Back to Entries
