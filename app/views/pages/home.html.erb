@@ -35,20 +35,21 @@
       </div>
     <% end %>
   </div>
-  <div class="right-column">
-    <% if current_user %>
-      <h2><%= t('tasks.todo') %></h2>
-      <ul class="todo-list">
-        <% today_tasks = current_user.tasks.where('DATE(created_at) = ?', Date.today) %>
-        <% today_tasks.each do |task| %>
-          <li>
-            <label>  
-              <%= check_box_tag("task_status", value = "1", checked = (task.status == 'finished'), disabled: true) %>
-              <%= task.title %>
-            </label>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
+<div class="right-column">
+  <% if current_user %>
+    <h2><%= t('tasks.todo') %></h2>
+    <li class="todo-list">
+      <% today_tasks = current_user.tasks.where('DATE(created_at) = ?', Date.today) %>
+      <% today_tasks.each do |task| %>
+        <li class="todo-item">
+          <div>
+            <%= check_box_tag("task_status", value = "1", checked = (task.status == 'finished'), disabled: true) %>
+          </div>
+          <div>
+            <%= task.title %>
+          </div>
+        </li>
+      <% end %>
+    </li>
+  <% end %>
 </div>
