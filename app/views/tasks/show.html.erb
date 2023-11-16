@@ -1,19 +1,14 @@
 <div class="show-container">
-    <h1><%= t('tasks.task_details') %></h1>
-    
-    <p class="show-label"><strong><%= t('tasks.title') %>:</strong></p>
-    <p class="show-value"><%= @task.title %></p>
-
-    <p class="show-label"><strong><%= t('tasks.description') %>:</strong></p>
-    <p class="show-value"><%= @task.description %></p>
-
-    <p class="show-label"><strong><%= t('tasks.status') %>:</strong></p>
-    <p class="show-value"><%= @task.status %></p>
-
-    <div class="buttons-container">
-      <%= link_to t('tasks.back_to_tasks'), user_tasks_path(@user), class: 'button' %>
-      <%= link_to t('tasks.edit'), edit_user_task_path(@user, @task), class: 'button' %>
-      <%= link_to t('tasks.delete'), user_task_path(@user, @task), data: { turbo_method: :delete }, class: 'button' %>
-    </div>
+  <h1><%= t('tasks.task_details') %></h1>
+  <p class="show-label"><strong><%= t('tasks.title') %>:</strong></p>
+  <p class="show-value"><%= @task.title %></p>
+  <p class="show-label"><strong><%= t('tasks.description') %>:</strong></p>
+  <p class="show-value"><%= @task.description %></p>
+  <p class="show-label"><strong><%= t('tasks.status') %>:</strong></p>
+  <p class="show-value"><%= @task.status %></p>
+  <div class="buttons-container">
+    <%= link_to t('tasks.back_to_tasks'), user_tasks_path(@user), class: 'button' %>
+    <%= link_to t('tasks.edit'), edit_user_task_path(@user, @task), class: 'button' %>
+    <%= link_to t('tasks.delete'), user_task_path(@user, @task), data: { turbo_method: :delete }, class: 'button' %>
   </div>
-  
+</div>
